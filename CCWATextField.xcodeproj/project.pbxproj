@@ -1,0 +1,404 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8452428624DAC6BD008F51DC /* CCWATextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 8452428424DAC6BD008F51DC /* CCWATextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8499B61624DAD58200ADEB1F /* Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499B60824DAD58200ADEB1F /* Delay.swift */; };
+		8499B61724DAD58200ADEB1F /* CCWAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499B60924DAD58200ADEB1F /* CCWAButton.swift */; };
+		8499B61824DAD58200ADEB1F /* CCWATextViewSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499B60A24DAD58200ADEB1F /* CCWATextViewSupport.swift */; };
+		8499B61924DAD58200ADEB1F /* CCWATextFieldSetUpProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499B60B24DAD58200ADEB1F /* CCWATextFieldSetUpProperty.swift */; };
+		8499B61A24DAD58200ADEB1F /* CCWATOutlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499B60C24DAD58200ADEB1F /* CCWATOutlineTextField.swift */; };
+		8499B61B24DAD58200ADEB1F /* CCWATextFieldViewPropertyActionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499B60D24DAD58200ADEB1F /* CCWATextFieldViewPropertyActionExtensions.swift */; };
+		8499B61C24DAD58200ADEB1F /* CCWATextFieldSetUpPropertyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499B60E24DAD58200ADEB1F /* CCWATextFieldSetUpPropertyExtension.swift */; };
+		8499B61D24DAD58200ADEB1F /* CCWATOutlineTextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499B60F24DAD58200ADEB1F /* CCWATOutlineTextFieldExtension.swift */; };
+		8499B61E24DAD58200ADEB1F /* CCWATextFieldSetUpPropertyViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499B61024DAD58200ADEB1F /* CCWATextFieldSetUpPropertyViewExtensions.swift */; };
+		8499B61F24DAD58200ADEB1F /* CCWATextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499B61124DAD58200ADEB1F /* CCWATextField.swift */; };
+		8499B62024DAD58200ADEB1F /* CCWATextFieldSetUpPropertyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499B61224DAD58200ADEB1F /* CCWATextFieldSetUpPropertyDelegate.swift */; };
+		8499B62124DAD58200ADEB1F /* CCWATextFieldViewPropertyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499B61324DAD58200ADEB1F /* CCWATextFieldViewPropertyExtension.swift */; };
+		8499B62224DAD58200ADEB1F /* CCWATextFieldViewProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499B61424DAD58200ADEB1F /* CCWATextFieldViewProperty.swift */; };
+		8499B62324DAD58200ADEB1F /* CCWATextViewConstraintProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499B61524DAD58200ADEB1F /* CCWATextViewConstraintProperty.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8452428124DAC6BD008F51DC /* CCWATextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CCWATextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8452428424DAC6BD008F51DC /* CCWATextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWATextField.h; sourceTree = "<group>"; };
+		8452428524DAC6BD008F51DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8499B60824DAD58200ADEB1F /* Delay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delay.swift; sourceTree = "<group>"; };
+		8499B60924DAD58200ADEB1F /* CCWAButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWAButton.swift; sourceTree = "<group>"; };
+		8499B60A24DAD58200ADEB1F /* CCWATextViewSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextViewSupport.swift; sourceTree = "<group>"; };
+		8499B60B24DAD58200ADEB1F /* CCWATextFieldSetUpProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextFieldSetUpProperty.swift; sourceTree = "<group>"; };
+		8499B60C24DAD58200ADEB1F /* CCWATOutlineTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATOutlineTextField.swift; sourceTree = "<group>"; };
+		8499B60D24DAD58200ADEB1F /* CCWATextFieldViewPropertyActionExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextFieldViewPropertyActionExtensions.swift; sourceTree = "<group>"; };
+		8499B60E24DAD58200ADEB1F /* CCWATextFieldSetUpPropertyExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextFieldSetUpPropertyExtension.swift; sourceTree = "<group>"; };
+		8499B60F24DAD58200ADEB1F /* CCWATOutlineTextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATOutlineTextFieldExtension.swift; sourceTree = "<group>"; };
+		8499B61024DAD58200ADEB1F /* CCWATextFieldSetUpPropertyViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextFieldSetUpPropertyViewExtensions.swift; sourceTree = "<group>"; };
+		8499B61124DAD58200ADEB1F /* CCWATextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextField.swift; sourceTree = "<group>"; };
+		8499B61224DAD58200ADEB1F /* CCWATextFieldSetUpPropertyDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextFieldSetUpPropertyDelegate.swift; sourceTree = "<group>"; };
+		8499B61324DAD58200ADEB1F /* CCWATextFieldViewPropertyExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextFieldViewPropertyExtension.swift; sourceTree = "<group>"; };
+		8499B61424DAD58200ADEB1F /* CCWATextFieldViewProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextFieldViewProperty.swift; sourceTree = "<group>"; };
+		8499B61524DAD58200ADEB1F /* CCWATextViewConstraintProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextViewConstraintProperty.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8452427E24DAC6BD008F51DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8452427724DAC6BD008F51DC = {
+			isa = PBXGroup;
+			children = (
+				8452428324DAC6BD008F51DC /* CCWATextField */,
+				8452428224DAC6BD008F51DC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8452428224DAC6BD008F51DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8452428124DAC6BD008F51DC /* CCWATextField.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8452428324DAC6BD008F51DC /* CCWATextField */ = {
+			isa = PBXGroup;
+			children = (
+				8452428424DAC6BD008F51DC /* CCWATextField.h */,
+				8452428524DAC6BD008F51DC /* Info.plist */,
+				8499B60724DAD58200ADEB1F /* CCWAOutlineTextField */,
+			);
+			path = CCWATextField;
+			sourceTree = "<group>";
+		};
+		8499B60724DAD58200ADEB1F /* CCWAOutlineTextField */ = {
+			isa = PBXGroup;
+			children = (
+				8499B60C24DAD58200ADEB1F /* CCWATOutlineTextField.swift */,
+				8499B60F24DAD58200ADEB1F /* CCWATOutlineTextFieldExtension.swift */,
+				8499B61424DAD58200ADEB1F /* CCWATextFieldViewProperty.swift */,
+				8499B61324DAD58200ADEB1F /* CCWATextFieldViewPropertyExtension.swift */,
+				8499B60D24DAD58200ADEB1F /* CCWATextFieldViewPropertyActionExtensions.swift */,
+				8499B60B24DAD58200ADEB1F /* CCWATextFieldSetUpProperty.swift */,
+				8499B60E24DAD58200ADEB1F /* CCWATextFieldSetUpPropertyExtension.swift */,
+				8499B61024DAD58200ADEB1F /* CCWATextFieldSetUpPropertyViewExtensions.swift */,
+				8499B61524DAD58200ADEB1F /* CCWATextViewConstraintProperty.swift */,
+				8499B61224DAD58200ADEB1F /* CCWATextFieldSetUpPropertyDelegate.swift */,
+				8499B60A24DAD58200ADEB1F /* CCWATextViewSupport.swift */,
+				8499B61124DAD58200ADEB1F /* CCWATextField.swift */,
+				8499B60924DAD58200ADEB1F /* CCWAButton.swift */,
+				8499B60824DAD58200ADEB1F /* Delay.swift */,
+			);
+			path = CCWAOutlineTextField;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8452427C24DAC6BD008F51DC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8452428624DAC6BD008F51DC /* CCWATextField.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8452428024DAC6BD008F51DC /* CCWATextField */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8452428924DAC6BD008F51DC /* Build configuration list for PBXNativeTarget "CCWATextField" */;
+			buildPhases = (
+				8452427C24DAC6BD008F51DC /* Headers */,
+				8452427D24DAC6BD008F51DC /* Sources */,
+				8452427E24DAC6BD008F51DC /* Frameworks */,
+				8452427F24DAC6BD008F51DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CCWATextField;
+			productName = CCWATextField;
+			productReference = 8452428124DAC6BD008F51DC /* CCWATextField.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8452427824DAC6BD008F51DC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = Admin;
+				TargetAttributes = {
+					8452428024DAC6BD008F51DC = {
+						CreatedOnToolsVersion = 11.6;
+					};
+				};
+			};
+			buildConfigurationList = 8452427B24DAC6BD008F51DC /* Build configuration list for PBXProject "CCWATextField" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8452427724DAC6BD008F51DC;
+			productRefGroup = 8452428224DAC6BD008F51DC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8452428024DAC6BD008F51DC /* CCWATextField */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8452427F24DAC6BD008F51DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8452427D24DAC6BD008F51DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8499B61A24DAD58200ADEB1F /* CCWATOutlineTextField.swift in Sources */,
+				8499B62024DAD58200ADEB1F /* CCWATextFieldSetUpPropertyDelegate.swift in Sources */,
+				8499B62224DAD58200ADEB1F /* CCWATextFieldViewProperty.swift in Sources */,
+				8499B61924DAD58200ADEB1F /* CCWATextFieldSetUpProperty.swift in Sources */,
+				8499B62124DAD58200ADEB1F /* CCWATextFieldViewPropertyExtension.swift in Sources */,
+				8499B61E24DAD58200ADEB1F /* CCWATextFieldSetUpPropertyViewExtensions.swift in Sources */,
+				8499B61624DAD58200ADEB1F /* Delay.swift in Sources */,
+				8499B61C24DAD58200ADEB1F /* CCWATextFieldSetUpPropertyExtension.swift in Sources */,
+				8499B61F24DAD58200ADEB1F /* CCWATextField.swift in Sources */,
+				8499B61B24DAD58200ADEB1F /* CCWATextFieldViewPropertyActionExtensions.swift in Sources */,
+				8499B61824DAD58200ADEB1F /* CCWATextViewSupport.swift in Sources */,
+				8499B61724DAD58200ADEB1F /* CCWAButton.swift in Sources */,
+				8499B61D24DAD58200ADEB1F /* CCWATOutlineTextFieldExtension.swift in Sources */,
+				8499B62324DAD58200ADEB1F /* CCWATextViewConstraintProperty.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8452428724DAC6BD008F51DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8452428824DAC6BD008F51DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8452428A24DAC6BD008F51DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CCWATextField",
+				);
+				INFOPLIST_FILE = CCWATextField/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.anandkhanpara.CCWATextField;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8452428B24DAC6BD008F51DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CCWATextField",
+				);
+				INFOPLIST_FILE = CCWATextField/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.anandkhanpara.CCWATextField;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8452427B24DAC6BD008F51DC /* Build configuration list for PBXProject "CCWATextField" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8452428724DAC6BD008F51DC /* Debug */,
+				8452428824DAC6BD008F51DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8452428924DAC6BD008F51DC /* Build configuration list for PBXNativeTarget "CCWATextField" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8452428A24DAC6BD008F51DC /* Debug */,
+				8452428B24DAC6BD008F51DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8452427824DAC6BD008F51DC /* Project object */;
+}
