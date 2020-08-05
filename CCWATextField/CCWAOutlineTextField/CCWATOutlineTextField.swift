@@ -3,6 +3,7 @@
 
 import UIKit
 
+@IBDesignable
 public class CCWAOutlineTextField: CCWATextFieldViewProperty {
     
     @IBInspectable public var text:String = "" {
@@ -119,6 +120,18 @@ public class CCWAOutlineTextField: CCWATextFieldViewProperty {
         }
     }
     
+    @IBInspectable public var activeImageLeftIconColor:UIColor? = nil {
+        didSet {
+            delegate?.update()
+        }
+    }
+    
+    @IBInspectable public var deactiveImageLeftIconColor:UIColor? = nil {
+        didSet {
+            delegate?.update()
+        }
+    }
+    
     @IBInspectable public var isClearButton:Bool = true {
         didSet {
             delegate?.update()
@@ -190,8 +203,6 @@ public class CCWAOutlineTextField: CCWATextFieldViewProperty {
             delegate?.update()
         }
     }
-    
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)

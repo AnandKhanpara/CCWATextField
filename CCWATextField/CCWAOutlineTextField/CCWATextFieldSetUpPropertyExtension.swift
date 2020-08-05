@@ -26,6 +26,7 @@ extension CCWATextFieldSetUpProperty {
         let done = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(activityCCWATextField_toolbarDone))
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
+        done.tintColor = self.tintColor
         toolbar.setItems([space, done], animated: true)
         return toolbar
     }
@@ -104,7 +105,11 @@ extension CCWATextFieldSetUpProperty {
             
             self.labelPlaceholder.text = " " + self.setPlaceholder + " "
             
-            self.labelPlaceholder.textColor = self.setActivePlaceholderColor ?? self.setDeactivePlaceholderColor
+            if self.setAnimatePlaceholder == true {
+                self.labelPlaceholder.textColor = self.setActivePlaceholderColor ?? self.setDeactivePlaceholderColor
+            }else {
+                self.textFieldInput.attributedPlaceholder = NSAttributedString(string: self.setPlaceholder, attributes: [NSAttributedString.Key.foregroundColor : self.setActivePlaceholderColor ?? self.setDeactivePlaceholderColor])
+            }
             
             self.labelPlaceholder.backgroundColor = self.setPlaceholder.empty() ? .clear : self.setActivePlacehoderBackGroundColor
 
@@ -124,7 +129,15 @@ extension CCWATextFieldSetUpProperty {
             
             self.viewBG.layer.shadowOffset = self.setActiveShadowOffset != .zero ? self.setActiveShadowOffset : self.setDeactiveShadowOffset
             
-            self.imageViewLeftSideImageView.image = self.setActiveImageLeftIcon
+            self.imageViewLeftSideImageView.image = self.setActiveImageLeftIcon ?? self.setDeactiveImageLeftIcon
+            
+            if let color = self.setActiveImageLeftIconColor {
+                self.imageViewLeftSideImageView.image = self.imageViewLeftSideImageView.image?.withRenderingMode(.alwaysTemplate)
+                self.imageViewLeftSideImageView.tintColor = color
+            }else if let color = self.setDeactiveImageLeftIconColor {
+                self.imageViewLeftSideImageView.image = self.imageViewLeftSideImageView.image?.withRenderingMode(.alwaysTemplate)
+                self.imageViewLeftSideImageView.tintColor = color
+            }
         
             self.ccwaOutlineTFConstraint.labelPlaceholderActiveTopConstraint.isActive = true
             self.ccwaOutlineTFConstraint.labelPlaceholderActiveLeadingConstraint.isActive = true
@@ -143,7 +156,11 @@ extension CCWATextFieldSetUpProperty {
             
             self.labelPlaceholder.text = self.setPlaceholder
             
-            self.labelPlaceholder.textColor = self.setDeactivePlaceholderColor
+            if self.setAnimatePlaceholder == true {
+                self.labelPlaceholder.textColor = self.setDeactivePlaceholderColor
+            }else {
+                self.textFieldInput.attributedPlaceholder = NSAttributedString(string: self.setPlaceholder, attributes: [NSAttributedString.Key.foregroundColor : self.setDeactivePlaceholderColor])
+            }
             
             self.labelPlaceholder.backgroundColor = .clear
 
@@ -164,6 +181,11 @@ extension CCWATextFieldSetUpProperty {
             self.viewBG.layer.shadowOffset = self.setDeactiveShadowOffset
             
             self.imageViewLeftSideImageView.image = self.setDeactiveImageLeftIcon
+            
+            if let color = self.setDeactiveImageLeftIconColor {
+                self.imageViewLeftSideImageView.image = self.imageViewLeftSideImageView.image?.withRenderingMode(.alwaysTemplate)
+                self.imageViewLeftSideImageView.tintColor = color
+            }
             
             self.ccwaOutlineTFConstraint.labelPlaceholderActiveTopConstraint.isActive = false
             self.ccwaOutlineTFConstraint.labelPlaceholderActiveLeadingConstraint.isActive = false

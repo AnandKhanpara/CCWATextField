@@ -17,6 +17,10 @@ extension CCWATextFieldViewProperty {
         viewMainBase.addSubview(viewSubBase)
         viewSubBase.addSubview(stackViewHorizontal)
         addSubViewConstraint()
+        
+        Delay().time(0.2) {
+            self.labelPlaceholder.frame = self.textFieldInput.bounds
+        }
     }
     
     internal func addSubViewConstraint() {

@@ -45,6 +45,10 @@ public class CCWATextFieldSetUpProperty: UIView {
         return getButtonClearText()
     }()
     
+    lazy internal var viewTextFieldInputBase: UIView = {
+        return getViewTextFieldInputBase()
+    }()
+    
     lazy internal var textFieldInput: CCWATextField = {
         return getTextFieldInput()
     }()
@@ -162,6 +166,17 @@ public class CCWATextFieldSetUpProperty: UIView {
         didSet {
             imageViewLeftSideImageView.image = setDeactiveImageLeftIcon
             viewLeftSideImageViewBase.isHidden = setDeactiveImageLeftIcon == nil
+        }
+    }
+    
+    internal var setActiveImageLeftIconColor:UIColor? = nil
+     
+    internal var setDeactiveImageLeftIconColor:UIColor? = nil {
+        didSet {
+            if let color = setDeactiveImageLeftIconColor {
+                imageViewLeftSideImageView.image = imageViewLeftSideImageView.image?.withRenderingMode(.alwaysTemplate)
+                imageViewLeftSideImageView.tintColor = color
+            }
         }
     }
      

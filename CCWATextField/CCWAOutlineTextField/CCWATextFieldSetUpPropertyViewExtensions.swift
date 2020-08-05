@@ -42,7 +42,7 @@ extension CCWATextFieldSetUpProperty {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         stackView.addArrangedSubview(viewLeftSideImageViewBase)
-        stackView.addArrangedSubview(textFieldInput)
+        stackView.addArrangedSubview(viewTextFieldInputBase)
         stackView.addArrangedSubview(viewRightSideImageViewBase)
         
         NSLayoutConstraint.activate([
@@ -105,8 +105,25 @@ extension CCWATextFieldSetUpProperty {
         return button
     }
     
+    internal func getViewTextFieldInputBase() -> UIView {
+        let view = UIView()
+        view.backgroundColor = .clear
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(textFieldInput)
+        NSLayoutConstraint.activate([
+            textFieldInput.topAnchor.constraint(equalTo: view.topAnchor, constant: 2),
+            textFieldInput.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            textFieldInput.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            textFieldInput.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+        ])
+        
+        return view
+    }
+    
     internal func getTextFieldInput() -> CCWATextField {
         let textField = CCWATextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
         textField.borderStyle = .none
         textField.font = UIFont.systemFont(ofSize: 16)
         textField.backgroundColor = .clear

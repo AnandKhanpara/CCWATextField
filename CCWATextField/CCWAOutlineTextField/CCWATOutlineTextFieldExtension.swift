@@ -49,6 +49,10 @@ extension CCWAOutlineTextField: CCWATextFieldSetUpPropertyDelegate {
         
         setDeactiveImageLeftIcon = deactiveImageLeftIcon
         
+        setActiveImageLeftIconColor = activeImageLeftIconColor
+        
+        setDeactiveImageLeftIconColor = deactiveImageLeftIconColor
+        
         setIsClearButton = isClearButton
         
         setImageClearButton = imageClearButton
