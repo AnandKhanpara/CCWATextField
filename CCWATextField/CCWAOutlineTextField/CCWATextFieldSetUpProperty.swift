@@ -63,7 +63,13 @@ public class CCWATextFieldSetUpProperty: UIView {
     
     internal var isFirstTimeLoad = true
     
-    public var field = UITextField()
+    public var field = UITextField() {
+        didSet {
+            Delay().time(0.3) {
+                self.textFieldInput.delegate = self.findViewController() as? UITextFieldDelegate
+            }
+        }
+    }
     
     internal var setText:String = "" {
         didSet {
@@ -72,7 +78,6 @@ public class CCWATextFieldSetUpProperty: UIView {
                     self.isFirstTimeLoad = false
                     self.textFieldInput.text = self.setText
                     self.adjustActivePlaceholder()
-                    self.textFieldInput.delegate = self.findViewController() as? UITextFieldDelegate
                 }
             }else {
                 self.textFieldInput.text = self.setText
