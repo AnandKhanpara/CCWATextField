@@ -7,41 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04770C7A24EA530900A32C7A /* CCWATextFieldSetUpPropertyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04770C6B24EA530800A32C7A /* CCWATextFieldSetUpPropertyExtension.swift */; };
+		04770C7B24EA530900A32C7A /* CCWATextFieldSetUpPropertyViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04770C6C24EA530800A32C7A /* CCWATextFieldSetUpPropertyViewExtensions.swift */; };
+		04770C7C24EA530900A32C7A /* CCWATextFieldViewPropertyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04770C6D24EA530800A32C7A /* CCWATextFieldViewPropertyExtension.swift */; };
+		04770C7D24EA530900A32C7A /* CCWATextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04770C6E24EA530800A32C7A /* CCWATextField.swift */; };
+		04770C7E24EA530900A32C7A /* CCWATextViewSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04770C6F24EA530800A32C7A /* CCWATextViewSupport.swift */; };
+		04770C7F24EA530900A32C7A /* CCWATOutlineTextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04770C7024EA530800A32C7A /* CCWATOutlineTextFieldExtension.swift */; };
+		04770C8024EA530900A32C7A /* CCWATextFieldViewPropertyActionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04770C7124EA530800A32C7A /* CCWATextFieldViewPropertyActionExtensions.swift */; };
+		04770C8124EA530900A32C7A /* CCWATextFieldMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04770C7224EA530800A32C7A /* CCWATextFieldMaster.swift */; };
+		04770C8224EA530900A32C7A /* CCWATextFieldViewProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04770C7324EA530800A32C7A /* CCWATextFieldViewProperty.swift */; };
+		04770C8324EA530900A32C7A /* CCWATextFieldSetUpPropertyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04770C7424EA530800A32C7A /* CCWATextFieldSetUpPropertyDelegate.swift */; };
+		04770C8424EA530900A32C7A /* CCWATextFieldSetUpProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04770C7524EA530800A32C7A /* CCWATextFieldSetUpProperty.swift */; };
+		04770C8524EA530900A32C7A /* CCWATOutlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04770C7624EA530800A32C7A /* CCWATOutlineTextField.swift */; };
+		04770C8624EA530900A32C7A /* CCWATextViewConstraintProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04770C7724EA530800A32C7A /* CCWATextViewConstraintProperty.swift */; };
+		04770C8724EA530900A32C7A /* Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04770C7824EA530900A32C7A /* Delay.swift */; };
+		04770C8824EA530900A32C7A /* CCWAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04770C7924EA530900A32C7A /* CCWAButton.swift */; };
 		8452428624DAC6BD008F51DC /* CCWATextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 8452428424DAC6BD008F51DC /* CCWATextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		84D8A84724DB0584009012F2 /* CCWATextFieldSetUpPropertyViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8A83924DB0583009012F2 /* CCWATextFieldSetUpPropertyViewExtensions.swift */; };
-		84D8A84824DB0584009012F2 /* Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8A83A24DB0583009012F2 /* Delay.swift */; };
-		84D8A84924DB0584009012F2 /* CCWAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8A83B24DB0583009012F2 /* CCWAButton.swift */; };
-		84D8A84A24DB0584009012F2 /* CCWATextViewSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8A83C24DB0583009012F2 /* CCWATextViewSupport.swift */; };
-		84D8A84B24DB0584009012F2 /* CCWATextFieldSetUpProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8A83D24DB0583009012F2 /* CCWATextFieldSetUpProperty.swift */; };
-		84D8A84C24DB0584009012F2 /* CCWATOutlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8A83E24DB0583009012F2 /* CCWATOutlineTextField.swift */; };
-		84D8A84D24DB0584009012F2 /* CCWATextFieldSetUpPropertyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8A83F24DB0583009012F2 /* CCWATextFieldSetUpPropertyExtension.swift */; };
-		84D8A84E24DB0584009012F2 /* CCWATOutlineTextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8A84024DB0583009012F2 /* CCWATOutlineTextFieldExtension.swift */; };
-		84D8A84F24DB0584009012F2 /* CCWATextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8A84124DB0583009012F2 /* CCWATextField.swift */; };
-		84D8A85024DB0584009012F2 /* CCWATextFieldSetUpPropertyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8A84224DB0583009012F2 /* CCWATextFieldSetUpPropertyDelegate.swift */; };
-		84D8A85124DB0584009012F2 /* CCWATextFieldViewPropertyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8A84324DB0583009012F2 /* CCWATextFieldViewPropertyExtension.swift */; };
-		84D8A85224DB0584009012F2 /* CCWATextFieldViewProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8A84424DB0583009012F2 /* CCWATextFieldViewProperty.swift */; };
-		84D8A85324DB0584009012F2 /* CCWATextViewConstraintProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8A84524DB0583009012F2 /* CCWATextViewConstraintProperty.swift */; };
-		84D8A85424DB0584009012F2 /* CCWATextFieldViewPropertyActionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8A84624DB0583009012F2 /* CCWATextFieldViewPropertyActionExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04770C6B24EA530800A32C7A /* CCWATextFieldSetUpPropertyExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextFieldSetUpPropertyExtension.swift; sourceTree = "<group>"; };
+		04770C6C24EA530800A32C7A /* CCWATextFieldSetUpPropertyViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextFieldSetUpPropertyViewExtensions.swift; sourceTree = "<group>"; };
+		04770C6D24EA530800A32C7A /* CCWATextFieldViewPropertyExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextFieldViewPropertyExtension.swift; sourceTree = "<group>"; };
+		04770C6E24EA530800A32C7A /* CCWATextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextField.swift; sourceTree = "<group>"; };
+		04770C6F24EA530800A32C7A /* CCWATextViewSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextViewSupport.swift; sourceTree = "<group>"; };
+		04770C7024EA530800A32C7A /* CCWATOutlineTextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATOutlineTextFieldExtension.swift; sourceTree = "<group>"; };
+		04770C7124EA530800A32C7A /* CCWATextFieldViewPropertyActionExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextFieldViewPropertyActionExtensions.swift; sourceTree = "<group>"; };
+		04770C7224EA530800A32C7A /* CCWATextFieldMaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextFieldMaster.swift; sourceTree = "<group>"; };
+		04770C7324EA530800A32C7A /* CCWATextFieldViewProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextFieldViewProperty.swift; sourceTree = "<group>"; };
+		04770C7424EA530800A32C7A /* CCWATextFieldSetUpPropertyDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextFieldSetUpPropertyDelegate.swift; sourceTree = "<group>"; };
+		04770C7524EA530800A32C7A /* CCWATextFieldSetUpProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextFieldSetUpProperty.swift; sourceTree = "<group>"; };
+		04770C7624EA530800A32C7A /* CCWATOutlineTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATOutlineTextField.swift; sourceTree = "<group>"; };
+		04770C7724EA530800A32C7A /* CCWATextViewConstraintProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextViewConstraintProperty.swift; sourceTree = "<group>"; };
+		04770C7824EA530900A32C7A /* Delay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delay.swift; sourceTree = "<group>"; };
+		04770C7924EA530900A32C7A /* CCWAButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWAButton.swift; sourceTree = "<group>"; };
 		8452428124DAC6BD008F51DC /* CCWATextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CCWATextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8452428424DAC6BD008F51DC /* CCWATextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWATextField.h; sourceTree = "<group>"; };
 		8452428524DAC6BD008F51DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84D8A83924DB0583009012F2 /* CCWATextFieldSetUpPropertyViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextFieldSetUpPropertyViewExtensions.swift; sourceTree = "<group>"; };
-		84D8A83A24DB0583009012F2 /* Delay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delay.swift; sourceTree = "<group>"; };
-		84D8A83B24DB0583009012F2 /* CCWAButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWAButton.swift; sourceTree = "<group>"; };
-		84D8A83C24DB0583009012F2 /* CCWATextViewSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextViewSupport.swift; sourceTree = "<group>"; };
-		84D8A83D24DB0583009012F2 /* CCWATextFieldSetUpProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextFieldSetUpProperty.swift; sourceTree = "<group>"; };
-		84D8A83E24DB0583009012F2 /* CCWATOutlineTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATOutlineTextField.swift; sourceTree = "<group>"; };
-		84D8A83F24DB0583009012F2 /* CCWATextFieldSetUpPropertyExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextFieldSetUpPropertyExtension.swift; sourceTree = "<group>"; };
-		84D8A84024DB0583009012F2 /* CCWATOutlineTextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATOutlineTextFieldExtension.swift; sourceTree = "<group>"; };
-		84D8A84124DB0583009012F2 /* CCWATextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextField.swift; sourceTree = "<group>"; };
-		84D8A84224DB0583009012F2 /* CCWATextFieldSetUpPropertyDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextFieldSetUpPropertyDelegate.swift; sourceTree = "<group>"; };
-		84D8A84324DB0583009012F2 /* CCWATextFieldViewPropertyExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextFieldViewPropertyExtension.swift; sourceTree = "<group>"; };
-		84D8A84424DB0583009012F2 /* CCWATextFieldViewProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextFieldViewProperty.swift; sourceTree = "<group>"; };
-		84D8A84524DB0583009012F2 /* CCWATextViewConstraintProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextViewConstraintProperty.swift; sourceTree = "<group>"; };
-		84D8A84624DB0583009012F2 /* CCWATextFieldViewPropertyActionExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCWATextFieldViewPropertyActionExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,20 +86,21 @@
 		84D8A83824DB0583009012F2 /* CCWAOutlineTextField */ = {
 			isa = PBXGroup;
 			children = (
-				84D8A83924DB0583009012F2 /* CCWATextFieldSetUpPropertyViewExtensions.swift */,
-				84D8A83A24DB0583009012F2 /* Delay.swift */,
-				84D8A83B24DB0583009012F2 /* CCWAButton.swift */,
-				84D8A83C24DB0583009012F2 /* CCWATextViewSupport.swift */,
-				84D8A83D24DB0583009012F2 /* CCWATextFieldSetUpProperty.swift */,
-				84D8A83E24DB0583009012F2 /* CCWATOutlineTextField.swift */,
-				84D8A83F24DB0583009012F2 /* CCWATextFieldSetUpPropertyExtension.swift */,
-				84D8A84024DB0583009012F2 /* CCWATOutlineTextFieldExtension.swift */,
-				84D8A84124DB0583009012F2 /* CCWATextField.swift */,
-				84D8A84224DB0583009012F2 /* CCWATextFieldSetUpPropertyDelegate.swift */,
-				84D8A84324DB0583009012F2 /* CCWATextFieldViewPropertyExtension.swift */,
-				84D8A84424DB0583009012F2 /* CCWATextFieldViewProperty.swift */,
-				84D8A84524DB0583009012F2 /* CCWATextViewConstraintProperty.swift */,
-				84D8A84624DB0583009012F2 /* CCWATextFieldViewPropertyActionExtensions.swift */,
+				04770C7924EA530900A32C7A /* CCWAButton.swift */,
+				04770C6E24EA530800A32C7A /* CCWATextField.swift */,
+				04770C7224EA530800A32C7A /* CCWATextFieldMaster.swift */,
+				04770C7524EA530800A32C7A /* CCWATextFieldSetUpProperty.swift */,
+				04770C7424EA530800A32C7A /* CCWATextFieldSetUpPropertyDelegate.swift */,
+				04770C6B24EA530800A32C7A /* CCWATextFieldSetUpPropertyExtension.swift */,
+				04770C6C24EA530800A32C7A /* CCWATextFieldSetUpPropertyViewExtensions.swift */,
+				04770C7324EA530800A32C7A /* CCWATextFieldViewProperty.swift */,
+				04770C7124EA530800A32C7A /* CCWATextFieldViewPropertyActionExtensions.swift */,
+				04770C6D24EA530800A32C7A /* CCWATextFieldViewPropertyExtension.swift */,
+				04770C7724EA530800A32C7A /* CCWATextViewConstraintProperty.swift */,
+				04770C6F24EA530800A32C7A /* CCWATextViewSupport.swift */,
+				04770C7624EA530800A32C7A /* CCWATOutlineTextField.swift */,
+				04770C7024EA530800A32C7A /* CCWATOutlineTextFieldExtension.swift */,
+				04770C7824EA530900A32C7A /* Delay.swift */,
 			);
 			path = CCWAOutlineTextField;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 				TargetAttributes = {
 					8452428024DAC6BD008F51DC = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
 					};
 				};
 			};
@@ -181,20 +185,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84D8A84924DB0584009012F2 /* CCWAButton.swift in Sources */,
-				84D8A84724DB0584009012F2 /* CCWATextFieldSetUpPropertyViewExtensions.swift in Sources */,
-				84D8A84B24DB0584009012F2 /* CCWATextFieldSetUpProperty.swift in Sources */,
-				84D8A84D24DB0584009012F2 /* CCWATextFieldSetUpPropertyExtension.swift in Sources */,
-				84D8A84824DB0584009012F2 /* Delay.swift in Sources */,
-				84D8A85424DB0584009012F2 /* CCWATextFieldViewPropertyActionExtensions.swift in Sources */,
-				84D8A85224DB0584009012F2 /* CCWATextFieldViewProperty.swift in Sources */,
-				84D8A85124DB0584009012F2 /* CCWATextFieldViewPropertyExtension.swift in Sources */,
-				84D8A85324DB0584009012F2 /* CCWATextViewConstraintProperty.swift in Sources */,
-				84D8A85024DB0584009012F2 /* CCWATextFieldSetUpPropertyDelegate.swift in Sources */,
-				84D8A84A24DB0584009012F2 /* CCWATextViewSupport.swift in Sources */,
-				84D8A84C24DB0584009012F2 /* CCWATOutlineTextField.swift in Sources */,
-				84D8A84E24DB0584009012F2 /* CCWATOutlineTextFieldExtension.swift in Sources */,
-				84D8A84F24DB0584009012F2 /* CCWATextField.swift in Sources */,
+				04770C7E24EA530900A32C7A /* CCWATextViewSupport.swift in Sources */,
+				04770C7F24EA530900A32C7A /* CCWATOutlineTextFieldExtension.swift in Sources */,
+				04770C8224EA530900A32C7A /* CCWATextFieldViewProperty.swift in Sources */,
+				04770C7C24EA530900A32C7A /* CCWATextFieldViewPropertyExtension.swift in Sources */,
+				04770C8424EA530900A32C7A /* CCWATextFieldSetUpProperty.swift in Sources */,
+				04770C8524EA530900A32C7A /* CCWATOutlineTextField.swift in Sources */,
+				04770C7D24EA530900A32C7A /* CCWATextField.swift in Sources */,
+				04770C8624EA530900A32C7A /* CCWATextViewConstraintProperty.swift in Sources */,
+				04770C8324EA530900A32C7A /* CCWATextFieldSetUpPropertyDelegate.swift in Sources */,
+				04770C7A24EA530900A32C7A /* CCWATextFieldSetUpPropertyExtension.swift in Sources */,
+				04770C8024EA530900A32C7A /* CCWATextFieldViewPropertyActionExtensions.swift in Sources */,
+				04770C8724EA530900A32C7A /* Delay.swift in Sources */,
+				04770C8824EA530900A32C7A /* CCWAButton.swift in Sources */,
+				04770C7B24EA530900A32C7A /* CCWATextFieldSetUpPropertyViewExtensions.swift in Sources */,
+				04770C8124EA530900A32C7A /* CCWATextFieldMaster.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +329,7 @@
 		8452428A24DAC6BD008F51DC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -344,6 +350,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.anandkhanpara.CCWATextField;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -352,6 +359,7 @@
 		8452428B24DAC6BD008F51DC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;

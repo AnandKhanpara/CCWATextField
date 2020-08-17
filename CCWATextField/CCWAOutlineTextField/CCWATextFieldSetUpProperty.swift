@@ -72,6 +72,7 @@ public class CCWATextFieldSetUpProperty: UIView {
                     self.isFirstTimeLoad = false
                     self.textFieldInput.text = self.setText
                     self.adjustActivePlaceholder()
+                    self.textFieldInput.delegate = self.findViewController() as? UITextFieldDelegate
                 }
             }else {
                 self.textFieldInput.text = self.setText
@@ -89,6 +90,9 @@ public class CCWATextFieldSetUpProperty: UIView {
     internal var setPlaceholder:String = "" {
         didSet {
             labelPlaceholder.text = setPlaceholder
+            Delay().time(0.1) {
+                self.adjustDeactivePlaceholder()
+            }
         }
     }
     
@@ -236,7 +240,9 @@ public class CCWATextFieldSetUpProperty: UIView {
     
     internal var setDoneToolbar:Bool = true {
         didSet {
-            textFieldInput.inputAccessoryView = setDoneToolbar ? setToolBarDone() : nil
+            Delay().time(0.2) {
+                self.textFieldInput.inputAccessoryView = self.setDoneToolbar ? self.setToolBarDone() : nil
+            }
         }
     }
 }

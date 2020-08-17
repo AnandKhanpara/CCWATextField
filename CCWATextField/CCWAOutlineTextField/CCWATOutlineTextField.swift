@@ -6,6 +6,12 @@ import UIKit
 @IBDesignable
 public class CCWAOutlineTextField: CCWATextFieldViewProperty {
     
+    @IBInspectable public var master:Bool = false {
+        didSet {
+            delegate?.update()
+        }
+    }
+    
     @IBInspectable public var text:String = "" {
         didSet {
             delegate?.updating()

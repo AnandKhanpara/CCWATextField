@@ -8,5 +8,6 @@ class CCWATextField: UITextField {
     var editingChanged : ((String) -> ())? = nil
     var editingDidBegin : ((String) -> ())? = nil
     var editingDidEnd : ((String) -> ())? = nil
+    
 }
 
