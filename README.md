@@ -9,7 +9,7 @@ You can improve the design and performance of your app by using CCWATextField. I
 ### Installation with CocoaPods
 
 ```
-pod 'CCWATextField', '0.0.2'
+pod 'CCWATextField', '0.0.4'
 ```
 
 ## Usage
@@ -73,7 +73,7 @@ ccwaOutlineTextField.editingDidBegin { (text) in
 
 #### Default value of a properties
 
-#### It is not mandatory to set the value of any properties. You can set the value as per your requirement.
+#### * It is not mandatory to set the value of any properties. You can set the value as per your requirement.
 
 ![CCWATextField](https://user-images.githubusercontent.com/52282676/89496090-51e31b00-d7d7-11ea-80e0-fb9f9d33e71e.png)
 
@@ -114,14 +114,75 @@ ccwaOutlineTextField.deactiveShadowOffset = .zero
 ccwaOutlineTextField.doneToolbar = true
 
 ```
-##### You can change the cursor color of CCWATextField and the color of toolbar Done with tintColor.
+##### * You can change the cursor color of CCWATextField and the color of toolbar Done with tintColor.
 
-![CCWATextField](https://user-images.githubusercontent.com/52282676/89501731-7a701280-d7e1-11ea-80a2-3ea57a7815eb.png)
+![CCWATextField](https://user-images.githubusercontent.com/52282676/90368790-453cad80-e088-11ea-8c68-236df8a75c78.png)
 
 ```swift
 ccwaOutlineTextField.tintColor = .link
 
 ```
+##### * The Master-value of the CCWAOutlineTextField must be true to apply the MasterDesign.
+
+![CCWATextField](https://user-images.githubusercontent.com/52282676/90368766-381fbe80-e088-11ea-97a9-00f9a77933a0.png)
+
+```swift
+ccwaOutlineTextField.master = true
+
+```
+
+##### * All CCWAOutlineTextField will design the same at active and dective times as you customize. If master is applied and property is not set. The default master apply will be like the image below. 
+
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    // Override point for customization after application launch.
+
+    //MARK:- Master Property of CCWAOutlineTextFieldMaster
+
+    ///Note: The Master-value of the CCWAOutlineTextField must be true to apply the MasterDesign.
+
+    CCWAOutlineTextFieldMaster.textColor = .black
+    CCWAOutlineTextFieldMaster.animatePlaceholder = false
+    CCWAOutlineTextFieldMaster.activePlaceholderColor = nil
+    CCWAOutlineTextFieldMaster.deactivePlaceholderColor = .lightGray
+    CCWAOutlineTextFieldMaster.activePlacehoderBackGroundColor = .white
+    CCWAOutlineTextFieldMaster.activeBorderColor = nil
+    CCWAOutlineTextFieldMaster.deactiveBorderColor = .darkGray
+    CCWAOutlineTextFieldMaster.activeBorderWidth = 0
+    CCWAOutlineTextFieldMaster.deactiveBorderWidth = 1
+    CCWAOutlineTextFieldMaster.activeCornerRadius = 0
+    CCWAOutlineTextFieldMaster.deactiveCornerRadius = 5
+    CCWAOutlineTextFieldMaster.activeBackGroundColor = nil
+    CCWAOutlineTextFieldMaster.deactiveBackGroundColor = .white
+    CCWAOutlineTextFieldMaster.fontSize = 16
+    CCWAOutlineTextFieldMaster.fontName = ""
+    CCWAOutlineTextFieldMaster.activeImageLeftIcon = nil
+    CCWAOutlineTextFieldMaster.deactiveImageLeftIcon = nil
+    CCWAOutlineTextFieldMaster.activeImageLeftIconColor = nil
+    CCWAOutlineTextFieldMaster.deactiveImageLeftIconColor = nil
+    CCWAOutlineTextFieldMaster.isClearButton = true
+    CCWAOutlineTextFieldMaster.imageClearButton = nil
+    CCWAOutlineTextFieldMaster.isSecureText = false
+    CCWAOutlineTextFieldMaster.activeShadowColor = nil
+    CCWAOutlineTextFieldMaster.deactiveShadowColor = .clear
+    CCWAOutlineTextFieldMaster.activeShadowRadius = 0
+    CCWAOutlineTextFieldMaster.deactiveShadowRadius = 0
+    CCWAOutlineTextFieldMaster.activeShadowOpacity = 0
+    CCWAOutlineTextFieldMaster.deactiveShadowOpacity = 1
+    CCWAOutlineTextFieldMaster.activeShadowOffset = .zero
+    CCWAOutlineTextFieldMaster.deactiveShadowOffset = .zero
+    CCWAOutlineTextFieldMaster.doneToolbar = true
+    CCWAOutlineTextFieldMaster.tintColor = nil
+
+    return true
+}
+
+```
+
+##### ** If design value master is applied.
+
+![CCWATextField](https://user-images.githubusercontent.com/52282676/90368883-656c6c80-e088-11ea-8bff-d2fb6b6d2247.png)
+
 
 ## Requirements
 
