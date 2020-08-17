@@ -53,19 +53,22 @@ class ViewController: UIViewController {
 
 ### Action 
 
-#### This way you can direct using three actions.
+#### This way you can direct using four actions.
 
 1. editingDidBegin
 2. editingChanged
 3. editingDidEnd
+4. touchUpInsideClear
 
 ```swift 
 ccwaOutlineTextField.editingDidBegin { (text) in
-
+     
 }.editingChanged { (text) in
-
+     
 }.editingDidEnd { (text) in
-
+    
+}.touchUpInsideClear {
+     
 }
 ```
 
