@@ -193,6 +193,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 - Xcode 11
 - Swift 5.0
 
+## Available
+
+- iPhone & iPad Development
 
 ## Author
 
