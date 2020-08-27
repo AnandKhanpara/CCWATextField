@@ -10,7 +10,7 @@ You can improve the design and performance of your app by using CCWATextField. I
 ### Installation with CocoaPods
 
 ```
-pod 'CCWATextField', '0.0.4'
+pod 'CCWATextField', '0.0.5'
 ```
 
 ## Usage

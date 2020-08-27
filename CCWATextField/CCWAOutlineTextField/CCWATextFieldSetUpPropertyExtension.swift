@@ -37,6 +37,7 @@ extension CCWATextFieldSetUpProperty {
     
     @objc internal func activityCCWATextField_editingChanged(sender:CCWATextField) {
         buttonClearShowHide()
+        delegate?.continueUpdate()
         if let editingChanged = sender.editingChanged {
             editingChanged(sender.text ?? "")
         }

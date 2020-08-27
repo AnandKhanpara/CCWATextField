@@ -207,4 +207,8 @@ extension CCWAOutlineTextField: CCWATextFieldSetUpPropertyDelegate {
             }
         }
     }
+    
+    public func continueUpdate() {
+        text = field.text
+    }
 }

@@ -12,7 +12,7 @@ public class CCWAOutlineTextField: CCWATextFieldViewProperty {
         }
     }
     
-    @IBInspectable public var text:String = "" {
+    @IBInspectable public var text:String? = "" {
         didSet {
             delegate?.updating()
         }

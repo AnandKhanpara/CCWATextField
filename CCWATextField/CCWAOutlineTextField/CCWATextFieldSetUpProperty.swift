@@ -71,7 +71,7 @@ public class CCWATextFieldSetUpProperty: UIView {
         }
     }
     
-    internal var setText:String = "" {
+    internal var setText:String? = "" {
         didSet {
             if isFirstTimeLoad == true {
                 Delay().time(0.3) {

@@ -7,4 +7,5 @@ import Foundation
 public protocol CCWATextFieldSetUpPropertyDelegate {
     func update()
     func updating()
+    func continueUpdate() 
 }
