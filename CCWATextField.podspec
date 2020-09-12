@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "CCWATextField"
-  spec.version      = "0.0.6"
+  spec.version      = "0.0.7"
   spec.summary      = "CCWATextField"
   spec.description  = <<-DESC
   CCWATextField
