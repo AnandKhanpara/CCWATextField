@@ -190,7 +190,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ## Requirements
 
-- iOS 11.0
+- iOS 12.0
 - Xcode 11
 - Swift 5.0
 
