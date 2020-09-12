@@ -188,14 +188,16 @@ extension CCWATextFieldViewProperty {
     
     
     @objc func btnRemoveDropDown_touchUpInside(sender:UIButton) {
-        removeDropDown()
+        removeDropDown(true)
     }
     
     @objc func btnRemoveDropDown_touchDragInside(sender:UIButton) {
-        removeDropDown()
+        removeDropDown(true)
     }
     
     func addCCWADropDownView() {
+        
+        removeDropDown()
         
         guard let viewController = findViewController() else { return }
         
@@ -204,8 +206,6 @@ extension CCWATextFieldViewProperty {
         let view = viewController.view ?? UIView()
         view.endEditing(true)
         let frame = convert(bounds, to: view)
-        
-        removeDropDown()
         
         let buttonRemoveDropDown:UIButton = {
             let button = UIButton()
@@ -242,11 +242,15 @@ extension CCWATextFieldViewProperty {
         
         let bottomSpace = (view.frame.size.height - (frame.size.height + frame.origin.y)) - 40
         
-        let topSpace = (view.frame.size.height - (bottomSpace + frame.size.height)) - 70
+        let topSpace = (view.frame.size.height - (bottomSpace + frame.size.height)) - 80
         
         let extraSpace = CGFloat(setArrCCWADropDownModel.filter({ (($0.image != nil) || ($0.imageURL != nil) || (($0.subtitle ?? "").isEmpty == false)) == true }).count * 17)
         
-        let count = setArrCCWADropDownModel.count
+        var count = setArrCCWADropDownModel.count
+        
+        if count == 0 {
+            count = 1
+        }
         
         let heightDropDown :CGFloat = CGFloat(count * 36) + extraSpace
 
@@ -279,8 +283,10 @@ extension CCWATextFieldViewProperty {
 
     }
     
-    func removeDropDown() {
-        deactivePlaceholder()
+    func removeDropDown(_ animated:Bool = false) {
+        if animated == true {
+            deactivePlaceholder()
+        }
         viewDropDownBack?.removeFromSuperview()
         viewDropDown?.removeFromSuperview()
     }

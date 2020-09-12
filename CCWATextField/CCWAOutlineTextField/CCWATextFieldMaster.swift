@@ -27,7 +27,7 @@
 
 import UIKit
 
-public class CCWAOutlineTextFieldMaster {
+public class CCWATextFieldMaster {
     
     public var textColor:UIColor = .black
     

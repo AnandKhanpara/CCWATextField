@@ -28,7 +28,6 @@
 import UIKit
 
 @IBDesignable
-
 public class CCWATextField: CCWATextFieldViewProperty {
     
     @IBInspectable public var master:Bool = false {
@@ -235,7 +234,73 @@ public class CCWATextField: CCWATextFieldViewProperty {
         }
     }
     
-    public var masterValue = CCWAOutlineTextFieldMaster() {
+    @IBInspectable public var dropDownMaster:Bool = false {
+        didSet {
+            delegate?.update()
+        }
+    }
+    
+    @IBInspectable public var dropDownBackGroundColor: UIColor = .white {
+        didSet {
+            delegate?.update()
+        }
+    }
+    
+    @IBInspectable public var dropDownSeperatorLineColor: UIColor = .lightGray {
+        didSet {
+            delegate?.update()
+        }
+    }
+    
+    @IBInspectable public var dropDownBorderColor: UIColor = .lightGray {
+        didSet {
+            delegate?.update()
+        }
+    }
+    
+    @IBInspectable public var dropDownBorderWidth: CGFloat = 0.5 {
+        didSet {
+            delegate?.update()
+        }
+    }
+    
+    @IBInspectable public var dropDownCornerRadius:CGFloat = 5 {
+        didSet {
+            delegate?.update()
+        }
+    }
+    
+    @IBInspectable public var dropDownShadowColor: UIColor = .darkGray {
+        didSet {
+            delegate?.update()
+        }
+    }
+    
+    @IBInspectable public var dropDownShadowRadius: CGFloat = 4 {
+        didSet {
+            delegate?.update()
+        }
+    }
+    
+    @IBInspectable public var dropDownShadowOpacity:Float = 0.5 {
+        didSet {
+            delegate?.update()
+        }
+    }
+    
+    @IBInspectable public var dropDownShadowOffset:CGSize = CGSize(width: 0, height: 2) {
+        didSet {
+            delegate?.update()
+        }
+    }
+    
+    public var masterValue = CCWATextFieldMaster() {
+        didSet {
+            delegate?.update()
+        }
+    }
+    
+    public var dropDownMasterValue = CCWADropDownViewMaster() {
         didSet {
             delegate?.update()
         }

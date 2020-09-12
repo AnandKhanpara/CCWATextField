@@ -377,6 +377,24 @@ public class CCWATextFieldViewProperty:UIView {
         }
     }
     
+    internal var setDropDownBackGroundColor: UIColor = .white
+    
+    internal var setDropDownSeperatorLineColor: UIColor = .lightGray
+    
+    internal var setDropDownBorderColor: UIColor = .lightGray
+    
+    internal var setDropDownBorderWidth: CGFloat = 0.5
+    
+    internal var setDropDownCornerRadius:CGFloat = 5
+    
+    internal var setDropDownShadowColor: UIColor = .darkGray
+    
+    internal var setDropDownShadowRadius: CGFloat = 4
+    
+    internal var setDropDownShadowOpacity:Float = 0.5
+    
+    internal var setDropDownShadowOffset:CGSize = CGSize(width: 0, height: 2)
+    
     internal var setFieldType:FieldType = .textField {
         didSet {
             if setFieldType == .textField {
@@ -408,7 +426,6 @@ public class CCWATextFieldViewProperty:UIView {
     public enum FieldType {
         case textField
         case dropDown
-        case searchDropDown
     }
     
     

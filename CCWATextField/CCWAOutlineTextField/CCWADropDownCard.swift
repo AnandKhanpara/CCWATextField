@@ -44,12 +44,21 @@ class CCWADropDownCardStyle1TableViewCell: UITableViewCell {
         return view
     }()
     
+    lazy var viewSeperator:UIView = {
+        let view = UIView()
+        view.backgroundColor = .clear
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        addSubview(viewBG)
+        backgroundColor = .clear
         
+        addSubview(viewBG)
         viewBG.addSubview(lableTitle)
+        addSubview(viewSeperator)
         
         NSLayoutConstraint.activate([
             
@@ -64,6 +73,10 @@ class CCWADropDownCardStyle1TableViewCell: UITableViewCell {
             lableTitle.trailingAnchor.constraint(equalTo: viewBG.trailingAnchor, constant: -15),
             lableTitle.bottomAnchor.constraint(equalTo: viewBG.bottomAnchor, constant: -10),
             
+            viewSeperator.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            viewSeperator.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
+            viewSeperator.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
+            viewSeperator.heightAnchor.constraint(equalToConstant: 0.5)
         ])
     }
     
@@ -110,12 +123,22 @@ class CCWADropDownCardStyle2TableViewCell: UITableViewCell {
         return view
     }()
     
+    lazy var viewSeperator:UIView = {
+        let view = UIView()
+        view.backgroundColor = .clear
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        backgroundColor = .clear
+        
         addSubview(viewBG)
         viewBG.addSubview(stackVertical)
-        
+        addSubview(viewSeperator)
+
         NSLayoutConstraint.activate([
             
             viewBG.topAnchor.constraint(equalTo: topAnchor, constant: 0),
@@ -131,7 +154,12 @@ class CCWADropDownCardStyle2TableViewCell: UITableViewCell {
             
             lableTitle.heightAnchor.constraint(equalToConstant: 16),
             
-            lableSubtitle.heightAnchor.constraint(equalToConstant: 14)
+            lableSubtitle.heightAnchor.constraint(equalToConstant: 14),
+            
+            viewSeperator.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            viewSeperator.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
+            viewSeperator.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
+            viewSeperator.heightAnchor.constraint(equalToConstant: 0.5)
         ])
     }
     
@@ -177,13 +205,23 @@ class CCWADropDownCardStyle3TableViewCell: UITableViewCell {
         return view
     }()
     
+    lazy var viewSeperator:UIView = {
+        let view = UIView()
+        view.backgroundColor = .clear
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        backgroundColor = .clear
         
         addSubview(viewBG)
         viewBG.addSubview(imgView)
         viewBG.addSubview(stackVertical)
-        
+        addSubview(viewSeperator)
+
         NSLayoutConstraint.activate([
             
             viewBG.topAnchor.constraint(equalTo: topAnchor, constant: 0),
@@ -204,6 +242,10 @@ class CCWADropDownCardStyle3TableViewCell: UITableViewCell {
             
             lableTitle.heightAnchor.constraint(equalToConstant: 16),
             
+            viewSeperator.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            viewSeperator.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
+            viewSeperator.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
+            viewSeperator.heightAnchor.constraint(equalToConstant: 0.5)
         ])
     }
     
@@ -258,13 +300,23 @@ class CCWADropDownCardStyle4TableViewCell: UITableViewCell {
         return view
     }()
     
+    lazy var viewSeperator:UIView = {
+        let view = UIView()
+        view.backgroundColor = .clear
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        backgroundColor = .clear
         
         addSubview(viewBG)
         viewBG.addSubview(imgView)
         viewBG.addSubview(stackVertical)
-        
+        addSubview(viewSeperator)
+
         NSLayoutConstraint.activate([
             
             viewBG.topAnchor.constraint(equalTo: topAnchor, constant: 0),
@@ -285,7 +337,12 @@ class CCWADropDownCardStyle4TableViewCell: UITableViewCell {
             
             lableTitle.heightAnchor.constraint(equalToConstant: 16),
             
-            lableSubtitle.heightAnchor.constraint(equalToConstant: 14)
+            lableSubtitle.heightAnchor.constraint(equalToConstant: 14),
+            
+            viewSeperator.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            viewSeperator.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
+            viewSeperator.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
+            viewSeperator.heightAnchor.constraint(equalToConstant: 0.5)
         ])
     }
     

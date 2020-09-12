@@ -228,6 +228,60 @@ extension CCWATextField: CCWATextFieldDelegate {
                 tintColor = tint
             }
         }
+
+        if dropDownMaster == false {
+            setDropDownBackGroundColor = dropDownBackGroundColor
+        }else {
+            setDropDownBackGroundColor = dropDownMasterValue.dropDownBackGroundColor
+        }
+        
+        if dropDownMaster == false {
+            setDropDownSeperatorLineColor = dropDownSeperatorLineColor
+        }else {
+            setDropDownSeperatorLineColor = dropDownMasterValue.dropDownSeperatorLineColor
+        }
+        
+        if dropDownMaster == false {
+            setDropDownBorderColor = dropDownBorderColor
+        }else {
+            setDropDownBorderColor = dropDownMasterValue.dropDownBorderColor
+        }
+        
+        if dropDownMaster == false {
+            setDropDownBorderWidth = dropDownBorderWidth
+        }else {
+            setDropDownBorderWidth = dropDownMasterValue.dropDownBorderWidth
+        }
+        
+        if dropDownMaster == false {
+            setDropDownCornerRadius = dropDownCornerRadius
+        }else {
+            setDropDownCornerRadius = dropDownMasterValue.dropDownCornerRadius
+        }
+        
+        if dropDownMaster == false {
+            setDropDownShadowColor = dropDownShadowColor
+        }else {
+            setDropDownShadowColor = dropDownMasterValue.dropDownShadowColor
+        }
+        
+        if dropDownMaster == false {
+            setDropDownShadowRadius = dropDownShadowRadius
+        }else {
+            setDropDownShadowRadius = dropDownMasterValue.dropDownShadowRadius
+        }
+        
+        if dropDownMaster == false {
+            setDropDownShadowOpacity = dropDownShadowOpacity
+        }else {
+            setDropDownShadowOpacity = dropDownMasterValue.dropDownShadowOpacity
+        }
+        
+        if dropDownMaster == false {
+            setDropDownShadowOffset = dropDownShadowOffset
+        }else {
+            setDropDownShadowOffset = dropDownMasterValue.dropDownShadowOffset
+        }
         
         setFieldType = fieldType
         

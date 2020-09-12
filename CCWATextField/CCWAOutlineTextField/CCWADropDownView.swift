@@ -36,7 +36,20 @@ class CCWADropDownView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.clipsToBounds = true
         tableView.layer.cornerRadius = 5
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
+        
         return tableView
+    }()
+    
+    lazy var lableNoDataAvailabel:UILabel = {
+       let lable = UILabel()
+        lable.translatesAutoresizingMaskIntoConstraints = false
+        lable.font = UIFont.systemFont(ofSize: 12)
+        lable.textColor = .lightGray
+        lable.textAlignment = .center
+        lable.text = "No Data Available!"
+        return lable
     }()
     
     var ccwaTextField:CCWATextField?
@@ -51,14 +64,11 @@ class CCWADropDownView: UIView {
     init(frame: CGRect = .zero, arrCCWADropDownModel:[CCWADropDownModel] = [CCWADropDownModel]()) {
         super.init(frame: frame)
         
-        layer.cornerRadius = 5
-        layer.borderWidth = 0.5
-        layer.borderColor = UIColor.lightGray.cgColor
-        
         if arrCCWADropDownModel.count > 0 {
             self.arrCCWADropDownModel = arrCCWADropDownModel
         }
         
+        addSubview(lableNoDataAvailabel)
         addSubview(tableViewDropDown)
         
         NSLayoutConstraint.activate([
@@ -66,6 +76,11 @@ class CCWADropDownView: UIView {
             tableViewDropDown.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             tableViewDropDown.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             tableViewDropDown.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
+            
+            lableNoDataAvailabel.topAnchor.constraint(equalTo: topAnchor, constant: 0),
+            lableNoDataAvailabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+            lableNoDataAvailabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+            lableNoDataAvailabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
         ])
         
         tableViewDropDown.register(CCWADropDownCardStyle1TableViewCell.self, forCellReuseIdentifier: cellIdentifierCCWADropDownCardStyle1TableViewCell)
@@ -73,6 +88,14 @@ class CCWADropDownView: UIView {
         tableViewDropDown.register(CCWADropDownCardStyle3TableViewCell.self, forCellReuseIdentifier: cellIdentifierCCWADropDownCardStyle3TableViewCell)
         tableViewDropDown.register(CCWADropDownCardStyle4TableViewCell.self, forCellReuseIdentifier: cellIdentifierCCWADropDownCardStyle4TableViewCell)
 
+        if self.arrCCWADropDownModel.count > 0 {
+            tableViewDropDown.isHidden = false
+            lableNoDataAvailabel.isHidden = true
+        }else {
+            tableViewDropDown.isHidden = true
+            lableNoDataAvailabel.isHidden = false
+        }
+        
         OperationQueue.main.addOperation { [weak self] in
             guard let self = self else { return }
             self.tableViewDropDown.reloadData()
@@ -84,11 +107,19 @@ class CCWADropDownView: UIView {
     }
     
     func shadow(frame:CGRect = .zero) {
-        layer.shadowPath = UIBezierPath(roundedRect: frame, cornerRadius: 5).cgPath
-        layer.shadowColor = UIColor.darkGray.cgColor
-        layer.shadowOffset = .zero
-        layer.shadowRadius = 4
-        layer.shadowOpacity = 0.5
+        guard let ccwaTextField = ccwaTextField else { return }
+        tableViewDropDown.layer.cornerRadius = ccwaTextField.setDropDownCornerRadius
+        backgroundColor = ccwaTextField.setDropDownBackGroundColor
+        
+        layer.cornerRadius = ccwaTextField.setDropDownCornerRadius
+        layer.borderWidth = ccwaTextField.setDropDownBorderWidth
+        layer.borderColor = ccwaTextField.setDropDownBorderColor.cgColor
+        
+        layer.shadowPath = UIBezierPath(roundedRect: frame, cornerRadius: ccwaTextField.setDropDownCornerRadius).cgPath
+        layer.shadowColor = ccwaTextField.setDropDownShadowColor.cgColor
+        layer.shadowOffset = ccwaTextField.setDropDownShadowOffset
+        layer.shadowRadius = ccwaTextField.setDropDownShadowRadius
+        layer.shadowOpacity = ccwaTextField.setDropDownShadowOpacity
     }
 }
 
@@ -101,7 +132,8 @@ extension CCWADropDownView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let value = arrCCWADropDownModel[indexPath.row]
-
+        value.title = "\(indexPath.row)"
+        
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifierCCWADropDownCardStyle4TableViewCell, for: indexPath) as? CCWADropDownCardStyle4TableViewCell, (value.image != nil || value.imageURL != nil), let subtitle = value.subtitle, subtitle.isEmpty == false {
             cell.lableTitle.text = value.title
             cell.lableSubtitle.text = subtitle
@@ -111,6 +143,7 @@ extension CCWADropDownView: UITableViewDelegate, UITableViewDataSource {
             if let url = value.imageURL {
                 cell.imgView.url = url
             }
+            cell.viewSeperator.backgroundColor = ccwaTextField?.setDropDownSeperatorLineColor
             return cell
         }
         
@@ -122,17 +155,20 @@ extension CCWADropDownView: UITableViewDelegate, UITableViewDataSource {
             if let url = value.imageURL {
                 cell.imgView.url = url
             }
+            cell.viewSeperator.backgroundColor = ccwaTextField?.setDropDownSeperatorLineColor
             return cell
         }
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifierCCWADropDownCardStyle2TableViewCell, for: indexPath) as? CCWADropDownCardStyle2TableViewCell, let subtitle = value.subtitle, subtitle.isEmpty == false {
             cell.lableTitle.text = value.title
             cell.lableSubtitle.text = subtitle
+            cell.viewSeperator.backgroundColor = ccwaTextField?.setDropDownSeperatorLineColor
             return cell
         }
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifierCCWADropDownCardStyle1TableViewCell, for: indexPath) as? CCWADropDownCardStyle1TableViewCell {
             cell.lableTitle.text = value.title
+            cell.viewSeperator.backgroundColor = ccwaTextField?.setDropDownSeperatorLineColor
             return cell
         }
         
@@ -141,7 +177,7 @@ extension CCWADropDownView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         ccwaTextField?.text = arrCCWADropDownModel[indexPath.row].title
-        ccwaTextField?.removeDropDown()
+        ccwaTextField?.removeDropDown(ccwaTextField?.text?.isEmpty ?? false)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
