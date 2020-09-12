@@ -27,47 +27,43 @@
 
 import UIKit
 
-extension String {
+
+class CCWAUIImageView: UIImageView {
     
-    func empty() -> Bool {
-        return (self == "" || self.trimmingCharacters(in: .whitespacesAndNewlines) == "" || self.isEmpty == true)
+    var url:String? {
+        didSet {
+            url(url)
+        }
     }
+    
 }
 
+class ImageStore: NSObject {
+    static let imageCache = NSCache<NSString, UIImage>()
+}
 
-extension UIView {
-    func findViewController() -> UIViewController? {
-        if let nextResponder = self.next as? UIViewController {
-            return nextResponder
-        } else if let nextResponder = self.next as? UIView {
-            return nextResponder.findViewController()
-        } else {
-            return nil
+extension CCWAUIImageView {
+    func url(_ url: String?) {
+        DispatchQueue.global().async { [weak self] in
+            guard let stringURL = url, let url = URL(string: stringURL) else {
+                return
+            }
+            func setImage(image:UIImage?) {
+                DispatchQueue.main.async {
+                    self?.image = image
+                }
+            }
+            let urlToString = url.absoluteString as NSString
+            if let cachedImage = ImageStore.imageCache.object(forKey: urlToString) {
+                setImage(image: cachedImage)
+            } else if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    ImageStore.imageCache.setObject(image, forKey: urlToString)
+                    setImage(image: image)
+                }
+            }else {
+                setImage(image: nil)
+            }
         }
     }
 }
-
-
-
-/*
- extension UIView {
-
-     func addTapGesture(action : @escaping ()->Void ){
-         let tap = MyTapGestureRecognizer(target: self , action: #selector(self.handleTap(_:)))
-         tap.action = action
-         tap.numberOfTapsRequired = 1
-
-         self.addGestureRecognizer(tap)
-         self.isUserInteractionEnabled = true
-
-     }
-     @objc func handleTap(_ sender: MyTapGestureRecognizer) {
-         sender.action!()
-     }
- }
-
- class MyTapGestureRecognizer: UITapGestureRecognizer {
-     var action : (()->Void)? = nil
- }
- */
-

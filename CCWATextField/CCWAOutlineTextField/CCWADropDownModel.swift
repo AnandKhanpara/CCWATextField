@@ -27,47 +27,19 @@
 
 import UIKit
 
-extension String {
+public class CCWADropDownModel {
     
-    func empty() -> Bool {
-        return (self == "" || self.trimmingCharacters(in: .whitespacesAndNewlines) == "" || self.isEmpty == true)
+    var title:String?
+    var subtitle:String?
+    var image:UIImage?
+    var imageURL:String?
+    var value:Any?
+    
+    public init(title:String? = nil, subtitle:String? = nil, image:UIImage? = nil, imageURL:String? = nil, value:Any? = nil) {
+        self.title = title
+        self.subtitle = subtitle
+        self.image = image
+        self.imageURL = imageURL
+        self.value = value
     }
 }
-
-
-extension UIView {
-    func findViewController() -> UIViewController? {
-        if let nextResponder = self.next as? UIViewController {
-            return nextResponder
-        } else if let nextResponder = self.next as? UIView {
-            return nextResponder.findViewController()
-        } else {
-            return nil
-        }
-    }
-}
-
-
-
-/*
- extension UIView {
-
-     func addTapGesture(action : @escaping ()->Void ){
-         let tap = MyTapGestureRecognizer(target: self , action: #selector(self.handleTap(_:)))
-         tap.action = action
-         tap.numberOfTapsRequired = 1
-
-         self.addGestureRecognizer(tap)
-         self.isUserInteractionEnabled = true
-
-     }
-     @objc func handleTap(_ sender: MyTapGestureRecognizer) {
-         sender.action!()
-     }
- }
-
- class MyTapGestureRecognizer: UITapGestureRecognizer {
-     var action : (()->Void)? = nil
- }
- */
-

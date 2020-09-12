@@ -25,49 +25,10 @@
  SOFTWARE.
  */
 
-import UIKit
+import Foundation
 
-extension String {
-    
-    func empty() -> Bool {
-        return (self == "" || self.trimmingCharacters(in: .whitespacesAndNewlines) == "" || self.isEmpty == true)
-    }
+public protocol CCWATextFieldDelegate {
+    func update()
+    func updating()
+    func continueUpdate() 
 }
-
-
-extension UIView {
-    func findViewController() -> UIViewController? {
-        if let nextResponder = self.next as? UIViewController {
-            return nextResponder
-        } else if let nextResponder = self.next as? UIView {
-            return nextResponder.findViewController()
-        } else {
-            return nil
-        }
-    }
-}
-
-
-
-/*
- extension UIView {
-
-     func addTapGesture(action : @escaping ()->Void ){
-         let tap = MyTapGestureRecognizer(target: self , action: #selector(self.handleTap(_:)))
-         tap.action = action
-         tap.numberOfTapsRequired = 1
-
-         self.addGestureRecognizer(tap)
-         self.isUserInteractionEnabled = true
-
-     }
-     @objc func handleTap(_ sender: MyTapGestureRecognizer) {
-         sender.action!()
-     }
- }
-
- class MyTapGestureRecognizer: UITapGestureRecognizer {
-     var action : (()->Void)? = nil
- }
- */
-
