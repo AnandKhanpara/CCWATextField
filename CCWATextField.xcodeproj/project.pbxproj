@@ -59,7 +59,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0477871625109087008A2B54 /* CCWATextField */ = {
+		0477871625109087008A2B54 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
 				04CD3ADE25109C9200C61A79 /* CCWADropDownCard.swift */,
@@ -79,7 +79,7 @@
 				04CD3ADC25109C9200C61A79 /* CCWAUITextField.swift */,
 				04CD3ADB25109C9200C61A79 /* Delay.swift */,
 			);
-			path = CCWATextField;
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		8452427724DAC6BD008F51DC = {
@@ -101,7 +101,7 @@
 		8452428324DAC6BD008F51DC /* CCWATextField */ = {
 			isa = PBXGroup;
 			children = (
-				0477871625109087008A2B54 /* CCWATextField */,
+				0477871625109087008A2B54 /* SupportingFiles */,
 				8452428424DAC6BD008F51DC /* CCWATextField.h */,
 				8452428524DAC6BD008F51DC /* Info.plist */,
 			);
