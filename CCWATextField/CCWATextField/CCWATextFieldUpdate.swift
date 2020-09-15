@@ -283,6 +283,30 @@ extension CCWATextField: CCWATextFieldDelegate {
             setDropDownShadowOffset = dropDownMasterValue.dropDownShadowOffset
         }
         
+        if dropDownMaster == false {
+            setDropDownTitleColor = dropDownTitleColor
+        }else {
+            setDropDownTitleColor = dropDownMasterValue.dropDownTitleColor
+        }
+        
+        if dropDownMaster == false {
+            setDropDownSubtitleColor = dropDownSubtitleColor
+        }else {
+            setDropDownSubtitleColor = dropDownMasterValue.dropDownSubtitleColor
+        }
+        
+        if dropDownMaster == false {
+            setDropDownTitleFontName = dropDownTitleFontName
+        }else {
+            setDropDownTitleFontName = dropDownMasterValue.dropDownTitleFontName
+        }
+        
+        if dropDownMaster == false {
+            setDropDownSubtitleFontName = dropDownSubtitleFontName
+        }else {
+            setDropDownSubtitleFontName = dropDownMasterValue.dropDownSubtitleFontName
+        }
+        
         setFieldType = fieldType
         
         ccwaTextField = self

@@ -29,12 +29,14 @@ import UIKit
 
 class CCWADropDownCardStyle1TableViewCell: UITableViewCell {
     
-    lazy var lableTitle:UILabel = {
-       let lable = UILabel()
-        lable.translatesAutoresizingMaskIntoConstraints = false
-        lable.font = UIFont.systemFont(ofSize: 14)
-        lable.textColor = .black
-        return lable
+    var fontSizeTitle:CGFloat = 14
+    
+    lazy var labelTitle:UILabel = {
+       let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: fontSizeTitle)
+        label.textColor = .black
+        return label
     }()
     
     lazy var viewBG:UIView = {
@@ -57,7 +59,7 @@ class CCWADropDownCardStyle1TableViewCell: UITableViewCell {
         backgroundColor = .clear
         
         addSubview(viewBG)
-        viewBG.addSubview(lableTitle)
+        viewBG.addSubview(labelTitle)
         addSubview(viewSeperator)
         
         NSLayoutConstraint.activate([
@@ -68,10 +70,10 @@ class CCWADropDownCardStyle1TableViewCell: UITableViewCell {
             viewBG.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
             viewBG.heightAnchor.constraint(equalToConstant: 36),
 
-            lableTitle.topAnchor.constraint(equalTo: viewBG.topAnchor, constant: 10),
-            lableTitle.leadingAnchor.constraint(equalTo: viewBG.leadingAnchor, constant: 15),
-            lableTitle.trailingAnchor.constraint(equalTo: viewBG.trailingAnchor, constant: -15),
-            lableTitle.bottomAnchor.constraint(equalTo: viewBG.bottomAnchor, constant: -10),
+            labelTitle.topAnchor.constraint(equalTo: viewBG.topAnchor, constant: 10),
+            labelTitle.leadingAnchor.constraint(equalTo: viewBG.leadingAnchor, constant: 15),
+            labelTitle.trailingAnchor.constraint(equalTo: viewBG.trailingAnchor, constant: -15),
+            labelTitle.bottomAnchor.constraint(equalTo: viewBG.bottomAnchor, constant: -10),
             
             viewSeperator.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             viewSeperator.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
@@ -83,11 +85,13 @@ class CCWADropDownCardStyle1TableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
 }
 
 
 class CCWADropDownCardStyle2TableViewCell: UITableViewCell {
+    
+    var fontSizeTitle:CGFloat = 14
+    var fontSizeSubTitle:CGFloat = 12
     
     lazy var stackVertical:UIStackView = {
        let stackView = UIStackView()
@@ -95,25 +99,25 @@ class CCWADropDownCardStyle2TableViewCell: UITableViewCell {
         stackView.alignment = .fill
         stackView.distribution = .fill
         stackView.spacing = 3
-        stackView.addArrangedSubview(lableTitle)
-        stackView.addArrangedSubview(lableSubtitle)
+        stackView.addArrangedSubview(labelTitle)
+        stackView.addArrangedSubview(labelSubtitle)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     
-    lazy var lableTitle:UILabel = {
-       let lable = UILabel()
-        lable.translatesAutoresizingMaskIntoConstraints = false
-        lable.font = UIFont.systemFont(ofSize: 14)
-        return lable
+    lazy var labelTitle:UILabel = {
+       let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: fontSizeTitle)
+        return label
     }()
     
-    lazy var lableSubtitle:UILabel = {
-       let lable = UILabel()
-        lable.translatesAutoresizingMaskIntoConstraints = false
-        lable.font = UIFont.systemFont(ofSize: 12)
-        lable.textColor = .lightGray
-        return lable
+    lazy var labelSubtitle:UILabel = {
+       let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: fontSizeSubTitle)
+        label.textColor = .lightGray
+        return label
     }()
     
     lazy var viewBG:UIView = {
@@ -152,9 +156,9 @@ class CCWADropDownCardStyle2TableViewCell: UITableViewCell {
             stackVertical.trailingAnchor.constraint(equalTo: viewBG.trailingAnchor, constant: -15),
             stackVertical.bottomAnchor.constraint(equalTo: viewBG.bottomAnchor, constant: -10),
             
-            lableTitle.heightAnchor.constraint(equalToConstant: 16),
+            labelTitle.heightAnchor.constraint(equalToConstant: 16),
             
-            lableSubtitle.heightAnchor.constraint(equalToConstant: 14),
+            labelSubtitle.heightAnchor.constraint(equalToConstant: 14),
             
             viewSeperator.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             viewSeperator.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
@@ -172,22 +176,24 @@ class CCWADropDownCardStyle2TableViewCell: UITableViewCell {
 
 class CCWADropDownCardStyle3TableViewCell: UITableViewCell {
     
+    var fontSizeTitle:CGFloat = 14
+    
     lazy var stackVertical:UIStackView = {
        let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .fill
         stackView.distribution = .fill
         stackView.spacing = 3
-        stackView.addArrangedSubview(lableTitle)
+        stackView.addArrangedSubview(labelTitle)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     
-    lazy var lableTitle:UILabel = {
-       let lable = UILabel()
-        lable.translatesAutoresizingMaskIntoConstraints = false
-        lable.font = UIFont.systemFont(ofSize: 14)
-        return lable
+    lazy var labelTitle:UILabel = {
+       let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: fontSizeTitle)
+        return label
     }()
     
     lazy var imgView:CCWAUIImageView = {
@@ -240,7 +246,7 @@ class CCWADropDownCardStyle3TableViewCell: UITableViewCell {
             stackVertical.trailingAnchor.constraint(equalTo: viewBG.trailingAnchor, constant: -15),
             stackVertical.bottomAnchor.constraint(equalTo: viewBG.bottomAnchor, constant: -10),
             
-            lableTitle.heightAnchor.constraint(equalToConstant: 16),
+            labelTitle.heightAnchor.constraint(equalToConstant: 16),
             
             viewSeperator.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             viewSeperator.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
@@ -258,31 +264,34 @@ class CCWADropDownCardStyle3TableViewCell: UITableViewCell {
 
 class CCWADropDownCardStyle4TableViewCell: UITableViewCell {
     
+    var fontSizeTitle:CGFloat = 14
+    var fontSizeSubTitle:CGFloat = 12
+    
     lazy var stackVertical:UIStackView = {
        let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .fill
         stackView.distribution = .fill
         stackView.spacing = 3
-        stackView.addArrangedSubview(lableTitle)
-        stackView.addArrangedSubview(lableSubtitle)
+        stackView.addArrangedSubview(labelTitle)
+        stackView.addArrangedSubview(labelSubtitle)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     
-    lazy var lableTitle:UILabel = {
-       let lable = UILabel()
-        lable.translatesAutoresizingMaskIntoConstraints = false
-        lable.font = UIFont.systemFont(ofSize: 14)
-        return lable
+    lazy var labelTitle:UILabel = {
+       let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: fontSizeTitle)
+        return label
     }()
     
-    lazy var lableSubtitle:UILabel = {
-       let lable = UILabel()
-        lable.translatesAutoresizingMaskIntoConstraints = false
-        lable.font = UIFont.systemFont(ofSize: 12)
-        lable.textColor = .lightGray
-        return lable
+    lazy var labelSubtitle:UILabel = {
+       let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: fontSizeSubTitle)
+        label.textColor = .lightGray
+        return label
     }()
     
     lazy var imgView:CCWAUIImageView = {
@@ -335,9 +344,9 @@ class CCWADropDownCardStyle4TableViewCell: UITableViewCell {
             stackVertical.trailingAnchor.constraint(equalTo: viewBG.trailingAnchor, constant: -15),
             stackVertical.bottomAnchor.constraint(equalTo: viewBG.bottomAnchor, constant: -10),
             
-            lableTitle.heightAnchor.constraint(equalToConstant: 16),
+            labelTitle.heightAnchor.constraint(equalToConstant: 16),
             
-            lableSubtitle.heightAnchor.constraint(equalToConstant: 14),
+            labelSubtitle.heightAnchor.constraint(equalToConstant: 14),
             
             viewSeperator.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             viewSeperator.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),

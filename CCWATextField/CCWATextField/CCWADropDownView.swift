@@ -42,14 +42,14 @@ class CCWADropDownView: UIView {
         return tableView
     }()
     
-    lazy var lableNoDataAvailabel:UILabel = {
-       let lable = UILabel()
-        lable.translatesAutoresizingMaskIntoConstraints = false
-        lable.font = UIFont.systemFont(ofSize: 12)
-        lable.textColor = .lightGray
-        lable.textAlignment = .center
-        lable.text = "No Data Available!"
-        return lable
+    lazy var labelNoDataAvailabel:UILabel = {
+       let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.textColor = .lightGray
+        label.textAlignment = .center
+        label.text = "No Data Availabel!"
+        return label
     }()
     
     var ccwaTextField:CCWATextField?
@@ -68,7 +68,7 @@ class CCWADropDownView: UIView {
             self.arrCCWADropDownModel = arrCCWADropDownModel
         }
         
-        addSubview(lableNoDataAvailabel)
+        addSubview(labelNoDataAvailabel)
         addSubview(tableViewDropDown)
         
         NSLayoutConstraint.activate([
@@ -77,10 +77,10 @@ class CCWADropDownView: UIView {
             tableViewDropDown.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             tableViewDropDown.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
             
-            lableNoDataAvailabel.topAnchor.constraint(equalTo: topAnchor, constant: 0),
-            lableNoDataAvailabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
-            lableNoDataAvailabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            lableNoDataAvailabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
+            labelNoDataAvailabel.topAnchor.constraint(equalTo: topAnchor, constant: 0),
+            labelNoDataAvailabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+            labelNoDataAvailabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+            labelNoDataAvailabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
         ])
         
         tableViewDropDown.register(CCWADropDownCardStyle1TableViewCell.self, forCellReuseIdentifier: cellIdentifierCCWADropDownCardStyle1TableViewCell)
@@ -90,10 +90,10 @@ class CCWADropDownView: UIView {
 
         if self.arrCCWADropDownModel.count > 0 {
             tableViewDropDown.isHidden = false
-            lableNoDataAvailabel.isHidden = true
+            labelNoDataAvailabel.isHidden = true
         }else {
             tableViewDropDown.isHidden = true
-            lableNoDataAvailabel.isHidden = false
+            labelNoDataAvailabel.isHidden = false
         }
         
         OperationQueue.main.addOperation { [weak self] in
@@ -132,42 +132,66 @@ extension CCWADropDownView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let value = arrCCWADropDownModel[indexPath.row]
-        value.title = "\(indexPath.row)"
+        //value.title = "\(indexPath.row)"
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifierCCWADropDownCardStyle4TableViewCell, for: indexPath) as? CCWADropDownCardStyle4TableViewCell, (value.image != nil || value.imageURL != nil), let subtitle = value.subtitle, subtitle.isEmpty == false {
-            cell.lableTitle.text = value.title
-            cell.lableSubtitle.text = subtitle
+            cell.labelTitle.text = value.title
+            cell.labelSubtitle.text = subtitle
             if let image = value.image {
                 cell.imgView.image = image
             }
             if let url = value.imageURL {
                 cell.imgView.url = url
             }
+            if let titleFont = ccwaTextField?.setDropDownTitleFontName, titleFont.empty() == false {
+                cell.labelTitle.font = UIFont(name: titleFont, size: cell.fontSizeTitle)
+            }
+            if let subtitleFont = ccwaTextField?.setDropDownSubtitleFontName, subtitleFont.empty() == false {
+                cell.labelSubtitle.font = UIFont(name: subtitleFont, size: cell.fontSizeTitle)
+            }
+            cell.labelTitle.textColor = ccwaTextField?.setDropDownTitleColor
+            cell.labelSubtitle.textColor = ccwaTextField?.setDropDownSubtitleColor
             cell.viewSeperator.backgroundColor = ccwaTextField?.setDropDownSeperatorLineColor
             return cell
         }
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifierCCWADropDownCardStyle3TableViewCell, for: indexPath) as? CCWADropDownCardStyle3TableViewCell, (value.image != nil || value.imageURL != nil) {
-            cell.lableTitle.text = value.title
+            cell.labelTitle.text = value.title
             if let image = value.image {
                 cell.imgView.image = image
             }
             if let url = value.imageURL {
                 cell.imgView.url = url
             }
+            if let titleFont = ccwaTextField?.setDropDownTitleFontName, titleFont.empty() == false {
+                cell.labelTitle.font = UIFont(name: titleFont, size: cell.fontSizeTitle)
+            }
+            cell.labelTitle.textColor = ccwaTextField?.setDropDownTitleColor
             cell.viewSeperator.backgroundColor = ccwaTextField?.setDropDownSeperatorLineColor
             return cell
         }
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifierCCWADropDownCardStyle2TableViewCell, for: indexPath) as? CCWADropDownCardStyle2TableViewCell, let subtitle = value.subtitle, subtitle.isEmpty == false {
-            cell.lableTitle.text = value.title
-            cell.lableSubtitle.text = subtitle
+            cell.labelTitle.text = value.title
+            cell.labelSubtitle.text = subtitle
+            if let titleFont = ccwaTextField?.setDropDownTitleFontName, titleFont.empty() == false {
+                cell.labelTitle.font = UIFont(name: titleFont, size: cell.fontSizeTitle)
+            }
+            if let subtitleFont = ccwaTextField?.setDropDownSubtitleFontName, subtitleFont.empty() == false {
+                cell.labelSubtitle.font = UIFont(name: subtitleFont, size: cell.fontSizeTitle)
+            }
+            cell.labelTitle.textColor = ccwaTextField?.setDropDownTitleColor
+            cell.labelSubtitle.textColor = ccwaTextField?.setDropDownSubtitleColor
             cell.viewSeperator.backgroundColor = ccwaTextField?.setDropDownSeperatorLineColor
             return cell
         }
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifierCCWADropDownCardStyle1TableViewCell, for: indexPath) as? CCWADropDownCardStyle1TableViewCell {
-            cell.lableTitle.text = value.title
+            cell.labelTitle.text = value.title
+            if let titleFont = ccwaTextField?.setDropDownTitleFontName, titleFont.empty() == false {
+                cell.labelTitle.font = UIFont(name: titleFont, size: cell.fontSizeTitle)
+            }
+            cell.labelTitle.textColor = ccwaTextField?.setDropDownTitleColor
             cell.viewSeperator.backgroundColor = ccwaTextField?.setDropDownSeperatorLineColor
             return cell
         }

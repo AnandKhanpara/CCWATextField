@@ -47,6 +47,14 @@ public class CCWADropDownViewMaster {
     
     public var dropDownShadowOffset:CGSize = CGSize(width: 0, height: 2)
     
+    public var dropDownTitleColor:UIColor = .black
+    
+    public var dropDownSubtitleColor:UIColor = .lightGray
+    
+    public var dropDownTitleFontName:String = ""
+    
+    public var dropDownSubtitleFontName:String = ""
+    
     public init() {
         
     }

@@ -294,6 +294,30 @@ public class CCWATextField: CCWATextFieldViewProperty {
         }
     }
     
+    @IBInspectable public var dropDownTitleColor:UIColor = .black {
+        didSet {
+            delegate?.update()
+        }
+    }
+    
+    @IBInspectable public var dropDownSubtitleColor:UIColor = .lightGray {
+        didSet {
+            delegate?.update()
+        }
+    }
+    
+    @IBInspectable public var dropDownTitleFontName:String = "" {
+        didSet {
+            delegate?.update()
+        }
+    }
+    
+    @IBInspectable public var dropDownSubtitleFontName:String = "" {
+        didSet {
+            delegate?.update()
+        }
+    }
+    
     public var masterValue = CCWATextFieldMaster() {
         didSet {
             delegate?.update()

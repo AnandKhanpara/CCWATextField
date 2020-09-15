@@ -395,6 +395,14 @@ public class CCWATextFieldViewProperty:UIView {
     
     internal var setDropDownShadowOffset:CGSize = CGSize(width: 0, height: 2)
     
+    internal var setDropDownTitleColor:UIColor = .black
+    
+    internal var setDropDownSubtitleColor:UIColor = .lightGray
+    
+    internal var setDropDownTitleFontName:String = ""
+    
+    internal var setDropDownSubtitleFontName:String = ""
+    
     internal var setFieldType:FieldType = .textField {
         didSet {
             if setFieldType == .textField {
