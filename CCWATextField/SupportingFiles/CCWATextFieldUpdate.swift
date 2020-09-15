@@ -312,6 +312,9 @@ extension CCWATextField: CCWATextFieldDelegate {
         ccwaTextField = self
         
         setArrCCWADropDownModel = arrCCWADropDownModel
+        
+        backgroundColor = .clear
+
     }
     
     public func continueUpdate() {
