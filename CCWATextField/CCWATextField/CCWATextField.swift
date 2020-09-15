@@ -341,6 +341,8 @@ public class CCWATextField: CCWATextFieldViewProperty {
             delegate?.update()
         }
     }
+    
+    public var dropDownDidSelectRow:((_ ccwaTextField:CCWATextField, _ row:Int, _ value:Any?) -> ())?
         
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -30,5 +30,5 @@ import Foundation
 public protocol CCWATextFieldDelegate {
     func update()
     func updating()
-    func continueUpdate() 
+    func continueUpdate()
 }

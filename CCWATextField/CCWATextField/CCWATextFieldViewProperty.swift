@@ -421,6 +421,8 @@ public class CCWATextFieldViewProperty:UIView {
     
     internal var setArrCCWADropDownModel = [CCWADropDownModel]()
 
+    internal let _UIConstraintBasedLayoutLogUnsatisfiable = "_UIConstraintBasedLayoutLogUnsatisfiable"
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpCCWATOutlineTextField()

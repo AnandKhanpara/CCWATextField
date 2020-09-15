@@ -200,12 +200,12 @@ extension CCWADropDownView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        ccwaTextField?.text = arrCCWADropDownModel[indexPath.row].title
+        let data = arrCCWADropDownModel[indexPath.row]
+        ccwaTextField?.text = data.title
         ccwaTextField?.removeDropDown(ccwaTextField?.text?.isEmpty ?? false)
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        print(cell.frame.size)
+        if let ccwaTextField = ccwaTextField {
+            ccwaTextField.dropDownDidSelectRow?(ccwaTextField, indexPath.row, data.value)
+        }
     }
     
 }
