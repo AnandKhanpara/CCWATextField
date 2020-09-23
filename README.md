@@ -18,7 +18,7 @@ pod 'CCWATextField', '0.0.5'
 ### Storyboard
 
 
-![CCWATextField](https://user-images.githubusercontent.com/52282676/89497410-ed758b00-d7d9-11ea-9460-cdf4574aa537.png)
+![CCWATextField](https://user-images.githubusercontent.com/52282676/93991550-119d2380-fdaa-11ea-97ab-cb099e1ce376.png)
 
 ```swift
 
