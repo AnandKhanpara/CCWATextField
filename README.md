@@ -21,11 +21,12 @@ pod 'CCWATextField', '0.0.5'
 ![CCWATextField](https://user-images.githubusercontent.com/52282676/89497410-ed758b00-d7d9-11ea-9460-cdf4574aa537.png)
 
 ```swift
+
 import CCWATextField
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var ccwaOutlineTextField:CCWAOutlineTextField!
+    @IBOutlet weak var ccwaTextField:CCWATextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,8 +45,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let ccwaOutlineTextField = CCWAOutlineTextField()
-        view.addSubview(ccwaOutlineTextField)
+        let ccwaTextField = CCWATextField()
+        view.addSubview(ccwaTextField)
         
     }
 }
@@ -62,7 +63,7 @@ class ViewController: UIViewController {
 4. touchUpInsideClear
 
 ```swift 
-ccwaOutlineTextField.editingDidBegin { (text) in
+ccwaTextField.editingDidBegin { (text) in
      
 }.editingChanged { (text) in
      
@@ -82,111 +83,138 @@ ccwaOutlineTextField.editingDidBegin { (text) in
 ![CCWATextField](https://user-images.githubusercontent.com/52282676/89496090-51e31b00-d7d7-11ea-80e0-fb9f9d33e71e.png)
 
 ``` swift
-let ccwaOutlineTextField = CCWAOutlineTextField()
-ccwaOutlineTextField.text = ""
-ccwaOutlineTextField.textColor = .black
-ccwaOutlineTextField.placeholder = ""
-ccwaOutlineTextField.animatePlaceholder = false
-ccwaOutlineTextField.activePlaceholderColor = nil
-ccwaOutlineTextField.deactivePlaceholderColor = .lightGray
-ccwaOutlineTextField.activePlacehoderBackGroundColor = .white
-ccwaOutlineTextField.activeBorderColor = nil
-ccwaOutlineTextField.deactiveBorderColor = .darkGray
-ccwaOutlineTextField.activeBorderWidth = 0
-ccwaOutlineTextField.deactiveBorderWidth = 1
-ccwaOutlineTextField.activeCornerRadius = 0
-ccwaOutlineTextField.deactiveCornerRadius = 5
-ccwaOutlineTextField.activeBackGroundColor = nil
-ccwaOutlineTextField.deactiveBackGroundColor = .white
-ccwaOutlineTextField.fontSize = 16
-ccwaOutlineTextField.fontName = ""
-ccwaOutlineTextField.activeImageLeftIcon = nil
-ccwaOutlineTextField.deactiveImageLeftIcon = nil
-ccwaOutlineTextField.activeImageLeftIconColor = nil
-ccwaOutlineTextField.deactiveImageLeftIconColor = nil
-ccwaOutlineTextField.isClearButton = true
-ccwaOutlineTextField.imageClearButton = nil
-ccwaOutlineTextField.isSecureText = false
-ccwaOutlineTextField.activeShadowColor = nil
-ccwaOutlineTextField.deactiveShadowColor = .clear
-ccwaOutlineTextField.activeShadowRadius = 0
-ccwaOutlineTextField.deactiveShadowRadius = 0
-ccwaOutlineTextField.activeShadowOpacity = 0
-ccwaOutlineTextField.deactiveShadowOpacity = 1
-ccwaOutlineTextField.activeShadowOffset = .zero
-ccwaOutlineTextField.deactiveShadowOffset = .zero
-ccwaOutlineTextField.doneToolbar = true
+
+let ccwaTextField = CCWATextField()
+
+```
+
+``` swift
+
+ccwaTextField.text = ""
+ccwaTextField.textColor = .black
+ccwaTextField.placeholder = ""
+ccwaTextField.animatePlaceholder = false
+ccwaTextField.activePlaceholderColor = nil
+ccwaTextField.deactivePlaceholderColor = .lightGray
+ccwaTextField.activePlacehoderBackGroundColor = .white
+ccwaTextField.activeBorderColor = nil
+ccwaTextField.deactiveBorderColor = .darkGray
+ccwaTextField.activeBorderWidth = 0
+ccwaTextField.deactiveBorderWidth = 1
+ccwaTextField.activeCornerRadius = 0
+ccwaTextField.deactiveCornerRadius = 5
+ccwaTextField.activeBackGroundColor = nil
+ccwaTextField.deactiveBackGroundColor = .white
+ccwaTextField.fontSize = 16
+ccwaTextField.fontName = ""
+ccwaTextField.activeImageLeftIcon = nil
+ccwaTextField.deactiveImageLeftIcon = nil
+ccwaTextField.activeImageLeftIconColor = nil
+ccwaTextField.deactiveImageLeftIconColor = nil
+ccwaTextField.isClearButton = true
+ccwaTextField.imageClearButton = nil
+ccwaTextField.isSecureText = false
+ccwaTextField.activeShadowColor = nil
+ccwaTextField.deactiveShadowColor = .clear
+ccwaTextField.activeShadowRadius = 0
+ccwaTextField.deactiveShadowRadius = 0
+ccwaTextField.activeShadowOpacity = 0
+ccwaTextField.deactiveShadowOpacity = 1
+ccwaTextField.activeShadowOffset = .zero
+ccwaTextField.deactiveShadowOffset = .zero
+ccwaTextField.doneToolbar = true
 
 ```
 ##### * You can change the cursor color of CCWATextField and the color of toolbar Done with tintColor.
 
-![CCWATextField](https://user-images.githubusercontent.com/52282676/90368790-453cad80-e088-11ea-8c68-236df8a75c78.png)
-
 ```swift
-ccwaOutlineTextField.tintColor = .link
+ccwaTextField.tintColor = .link
 
 ```
 ##### * The Master-value of the CCWAOutlineTextField must be true to apply the MasterDesign.
 
-![CCWATextField](https://user-images.githubusercontent.com/52282676/90368766-381fbe80-e088-11ea-97a9-00f9a77933a0.png)
-
 ```swift
-ccwaOutlineTextField.master = true
+ccwaTextField.master = true
+ccwaTextField.masterValue = CCWATextFieldMaster()
 
+ccwaTextField.dropDownMaster = false
+ccwaTextField.dropDownMasterValue = CCWADropDownViewMaster()
 ```
 
 ##### * All CCWAOutlineTextField will design the same at active and dective times as you customize. If master is applied and property is not set. The default master apply will be like the image below. 
 
 ```swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
 
-    //MARK:- Master Property of CCWAOutlineTextFieldMaster
+class func masterValue() -> CCWATextFieldMaster {
+    //MARK:- Master Property of CCWATextFieldMaster
 
-    ///Note: The Master-value of the CCWAOutlineTextField must be true to apply the MasterDesign.
+    //Note: The Master-value of the CCWATextField must be true to apply the TextField MasterDesign.
 
-    CCWAOutlineTextFieldMaster.textColor = .black
-    CCWAOutlineTextFieldMaster.animatePlaceholder = false
-    CCWAOutlineTextFieldMaster.activePlaceholderColor = nil
-    CCWAOutlineTextFieldMaster.deactivePlaceholderColor = .lightGray
-    CCWAOutlineTextFieldMaster.activePlacehoderBackGroundColor = .white
-    CCWAOutlineTextFieldMaster.activeBorderColor = nil
-    CCWAOutlineTextFieldMaster.deactiveBorderColor = .darkGray
-    CCWAOutlineTextFieldMaster.activeBorderWidth = 0
-    CCWAOutlineTextFieldMaster.deactiveBorderWidth = 1
-    CCWAOutlineTextFieldMaster.activeCornerRadius = 0
-    CCWAOutlineTextFieldMaster.deactiveCornerRadius = 5
-    CCWAOutlineTextFieldMaster.activeBackGroundColor = nil
-    CCWAOutlineTextFieldMaster.deactiveBackGroundColor = .white
-    CCWAOutlineTextFieldMaster.fontSize = 16
-    CCWAOutlineTextFieldMaster.fontName = ""
-    CCWAOutlineTextFieldMaster.activeImageLeftIcon = nil
-    CCWAOutlineTextFieldMaster.deactiveImageLeftIcon = nil
-    CCWAOutlineTextFieldMaster.activeImageLeftIconColor = nil
-    CCWAOutlineTextFieldMaster.deactiveImageLeftIconColor = nil
-    CCWAOutlineTextFieldMaster.isClearButton = true
-    CCWAOutlineTextFieldMaster.imageClearButton = nil
-    CCWAOutlineTextFieldMaster.isSecureText = false
-    CCWAOutlineTextFieldMaster.activeShadowColor = nil
-    CCWAOutlineTextFieldMaster.deactiveShadowColor = .clear
-    CCWAOutlineTextFieldMaster.activeShadowRadius = 0
-    CCWAOutlineTextFieldMaster.deactiveShadowRadius = 0
-    CCWAOutlineTextFieldMaster.activeShadowOpacity = 0
-    CCWAOutlineTextFieldMaster.deactiveShadowOpacity = 1
-    CCWAOutlineTextFieldMaster.activeShadowOffset = .zero
-    CCWAOutlineTextFieldMaster.deactiveShadowOffset = .zero
-    CCWAOutlineTextFieldMaster.doneToolbar = true
-    CCWAOutlineTextFieldMaster.tintColor = nil
+    let ccwaTextFieldMaster = CCWATextFieldMaster()
+    ccwaTextFieldMaster.textColor = .black
+    ccwaTextFieldMaster.animatePlaceholder = false
+    ccwaTextFieldMaster.activePlaceholderColor = nil
+    ccwaTextFieldMaster.deactivePlaceholderColor = .lightGray
+    ccwaTextFieldMaster.activePlacehoderBackGroundColor = .white
+    ccwaTextFieldMaster.activeBorderColor = nil
+    ccwaTextFieldMaster.deactiveBorderColor = .darkGray
+    ccwaTextFieldMaster.activeBorderWidth = 0
+    ccwaTextFieldMaster.deactiveBorderWidth = 1
+    ccwaTextFieldMaster.activeCornerRadius = 0
+    ccwaTextFieldMaster.deactiveCornerRadius = 5
+    ccwaTextFieldMaster.activeBackGroundColor = nil
+    ccwaTextFieldMaster.deactiveBackGroundColor = .white
+    ccwaTextFieldMaster.fontSize = 16
+    ccwaTextFieldMaster.fontName = ""
+    ccwaTextFieldMaster.activeImageLeftIcon = nil
+    ccwaTextFieldMaster.deactiveImageLeftIcon = nil
+    ccwaTextFieldMaster.activeImageLeftIconColor = nil
+    ccwaTextFieldMaster.deactiveImageLeftIconColor = nil
+    ccwaTextFieldMaster.isClearButton = true
+    ccwaTextFieldMaster.imageClearButton = nil
+    ccwaTextFieldMaster.isSecureText = false
+    ccwaTextFieldMaster.activeShadowColor = nil
+    ccwaTextFieldMaster.deactiveShadowColor = .clear
+    ccwaTextFieldMaster.activeShadowRadius = 0
+    ccwaTextFieldMaster.deactiveShadowRadius = 0
+    ccwaTextFieldMaster.activeShadowOpacity = 0
+    ccwaTextFieldMaster.deactiveShadowOpacity = 1
+    ccwaTextFieldMaster.activeShadowOffset = .zero
+    ccwaTextFieldMaster.deactiveShadowOffset = .zero
+    ccwaTextFieldMaster.doneToolbar = true
+    ccwaTextFieldMaster.tintColor = nil
 
-    return true
+    return ccwaTextFieldMaster
 }
 
+
+
+class func dropDownMasterValue() -> CCWADropDownViewMaster {
+
+    //MARK:- Master Property of CCWADropDownViewMaster
+
+    //Note: The Master-value of the CCWATextField must be true to apply the DropDown MasterDesign.
+
+    let ccwaDropDownViewMaster = CCWADropDownViewMaster()
+    ccwaDropDownViewMaster.dropDownBackGroundColor = .white
+    ccwaDropDownViewMaster.dropDownSeperatorLineColor = .lightGray
+    ccwaDropDownViewMaster.dropDownBorderColor = .lightGray
+    ccwaDropDownViewMaster.dropDownBorderWidth = 0.5
+    ccwaDropDownViewMaster.dropDownCornerRadius = 5
+    ccwaDropDownViewMaster.dropDownShadowColor = .darkGray
+    ccwaDropDownViewMaster.dropDownShadowRadius = 4
+    ccwaDropDownViewMaster.dropDownShadowOpacity = 0.5
+    ccwaDropDownViewMaster.dropDownShadowOffset = CGSize(width: 0, height: 2)
+    ccwaDropDownViewMaster.dropDownTitleColor = .black
+    ccwaDropDownViewMaster.dropDownSubtitleColor = .lightGray
+    ccwaDropDownViewMaster.dropDownTitleFontName = ""
+    ccwaDropDownViewMaster.dropDownSubtitleFontName = ""
+
+    return ccwaDropDownViewMaster
+}
+
+
 ```
-
-##### ** If design value master is applied.
-
-![CCWATextField](https://user-images.githubusercontent.com/52282676/90368883-656c6c80-e088-11ea-8bff-d2fb6b6d2247.png)
-
 
 ## Requirements
 
