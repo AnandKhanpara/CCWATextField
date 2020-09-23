@@ -4,7 +4,7 @@ You can improve the design and performance of your app by using CCWATextField. I
 ![CCWATextField](https://user-images.githubusercontent.com/52282676/89509432-ef951500-d7ec-11ea-9fe1-a7ec5a2b21b6.gif)
 
 
-## [Download Example](https://github.com/AnandKhanpara/CCWATextField/files/5266997/CCWATextFieldExample.zip)
+## [Download Example](https://github.com/AnandKhanpara/CCWATextField/files/5267004/CCWATextFieldExample.zip)
 
 
 ### Installation with CocoaPods
