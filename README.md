@@ -82,7 +82,7 @@ ccwaTextField.editingDidBegin { (text) in
 
 #### * It is not mandatory to set the value of any properties. You can set the value as per your requirement.
 
-![CCWATextField](https://user-images.githubusercontent.com/52282676/89496090-51e31b00-d7d7-11ea-80e0-fb9f9d33e71e.png)
+![CCWATextField](https://user-images.githubusercontent.com/52282676/93991550-119d2380-fdaa-11ea-97ab-cb099e1ce376.png)
 
 ``` swift
 
