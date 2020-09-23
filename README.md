@@ -30,6 +30,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        ccwaTextField.fieldType = .dropDown // .textField (Default)
     }
 }
 
@@ -46,6 +47,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let ccwaTextField = CCWATextField()
+        ccwaTextField.fieldType = .dropDown // .textField (Default)
         view.addSubview(ccwaTextField)
         
     }
@@ -90,6 +92,10 @@ let ccwaTextField = CCWATextField()
 
 ``` swift
 
+ccwaTextField.fieldType = .dropDown // .textField (Default)
+
+//MARK :- CCWATextField
+
 ccwaTextField.text = ""
 ccwaTextField.textColor = .black
 ccwaTextField.placeholder = ""
@@ -123,6 +129,23 @@ ccwaTextField.deactiveShadowOpacity = 1
 ccwaTextField.activeShadowOffset = .zero
 ccwaTextField.deactiveShadowOffset = .zero
 ccwaTextField.doneToolbar = true
+
+             
+//MARK:- CCWADropDown
+
+ccwaTextField.setDropDownBackGroundColor = .white
+ccwaTextField.setDropDownSeperatorLineColor = .lightGray
+ccwaTextField.setDropDownBorderColor = .lightGray
+ccwaTextField.setDropDownBorderWidth = 0.5
+ccwaTextField.setDropDownCornerRadius = 5
+ccwaTextField.setDropDownShadowColor = .darkGray
+ccwaTextField.setDropDownShadowRadius = 4
+ccwaTextField.setDropDownShadowOpacity = 0.5
+ccwaTextField.setDropDownShadowOffset = CGSize(width: 0, height: 2)
+ccwaTextField.setDropDownTitleColor = .black
+ccwaTextField.setDropDownSubtitleColor = .lightGray
+ccwaTextField.setDropDownTitleFontName = ""
+ccwaTextField.setDropDownSubtitleFontName:String = ""
 
 ```
 ##### * You can change the cursor color of CCWATextField and the color of toolbar Done with tintColor.
