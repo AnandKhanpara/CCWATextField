@@ -18,7 +18,7 @@ pod 'CCWATextField', '1.0.0'
 ### Storyboard
 
 
-![CCWATextField](https://user-images.githubusercontent.com/52282676/96961440-4b388a00-1522-11eb-8f72-f58d091259c8.png)
+![CCWATextField](https://user-images.githubusercontent.com/52282676/96963037-91dbb380-1525-11eb-801a-2c06c298ba21.png)
 
 ```swift
 
@@ -59,10 +59,16 @@ class ViewController: UIViewController {
 
 #### This way you can direct using four actions.
 
+###### Text-Field 
+
 1. editingDidBegin
 2. editingChanged
 3. editingDidEnd
 4. touchUpInsideClear
+
+###### Drop-Down 
+
+1. dropDownDidSelectRow
 
 ```swift 
 
@@ -92,7 +98,7 @@ ccwaTextField.dropDownDidSelectRow = { ccwaTextField, index, value in
 
 #### * It is not mandatory to set the value of any properties. You can set the value as per your requirement.
 
-![CCWATextField](https://user-images.githubusercontent.com/52282676/93991550-119d2380-fdaa-11ea-97ab-cb099e1ce376.png)
+![CCWATextField](https://user-images.githubusercontent.com/52282676/96961440-4b388a00-1522-11eb-8f72-f58d091259c8.png)
 
 ``` swift
 
