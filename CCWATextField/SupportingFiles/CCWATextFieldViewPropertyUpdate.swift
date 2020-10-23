@@ -283,6 +283,11 @@ extension CCWATextFieldViewProperty {
         
         viewDropDown = ccwaDropDownView
         viewDropDownBack = buttonRemoveDropDown
+        
+        UIView.animate(withDuration: 0.2) {
+            self.viewRightSideDropDownArrowImageViewBase.transform = CGAffineTransform(rotationAngle: .pi)
+            self.layoutIfNeeded()
+        }
 
     }
     
@@ -292,6 +297,11 @@ extension CCWATextFieldViewProperty {
         }
         viewDropDownBack?.removeFromSuperview()
         viewDropDown?.removeFromSuperview()
+        
+        UIView.animate(withDuration: 0.2) {
+            self.viewRightSideDropDownArrowImageViewBase.transform = self.viewRightSideDropDownArrowImageViewBase.transform.rotated(by: .pi)
+            self.layoutIfNeeded()
+        }
     }
     
     internal func addTargetAction() {

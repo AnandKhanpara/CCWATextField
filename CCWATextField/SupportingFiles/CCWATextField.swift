@@ -318,6 +318,13 @@ public class CCWATextField: CCWATextFieldViewProperty {
         }
     }
     
+    @IBInspectable public var dropDownArrowImage:UIImage? = nil {
+        didSet {
+            delegate?.update()
+        }
+    }
+    
+    
     public var masterValue = CCWATextFieldMaster() {
         didSet {
             delegate?.update()

@@ -68,7 +68,7 @@ public class CCWATextFieldViewProperty:UIView {
         stackView.addArrangedSubview(viewLeftSideImageViewBase)
         stackView.addArrangedSubview(viewTextFieldInputBase)
         stackView.addArrangedSubview(viewRightSideImageViewBase)
-        
+        stackView.addArrangedSubview(viewRightSideDropDownArrowImageViewBase)
         NSLayoutConstraint.activate([
             viewLeftSideImageViewBase.widthAnchor.constraint(equalTo: viewLeftSideImageViewBase.heightAnchor, multiplier: 1),
         ])
@@ -110,7 +110,7 @@ public class CCWATextFieldViewProperty:UIView {
         view.backgroundColor = .clear
         view.isHidden = true
         view.translatesAutoresizingMaskIntoConstraints = false
-        
+
         view.addSubview(buttonClearText)
         NSLayoutConstraint.activate([
             buttonClearText.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
@@ -118,6 +118,22 @@ public class CCWATextFieldViewProperty:UIView {
             buttonClearText.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0),
             buttonClearText.heightAnchor.constraint(equalToConstant: 15),
             buttonClearText.widthAnchor.constraint(equalTo: buttonClearText.heightAnchor, multiplier: 1)
+        ])
+        return view
+    }()
+    
+    lazy internal var viewRightSideDropDownArrowImageViewBase: UIView = {
+        let view = UIView()
+        view.backgroundColor = .clear
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(imageViewDropDownArrow)
+        NSLayoutConstraint.activate([
+            imageViewDropDownArrow.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            imageViewDropDownArrow.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            imageViewDropDownArrow.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0),
+            imageViewDropDownArrow.heightAnchor.constraint(equalToConstant: 20),
+            imageViewDropDownArrow.widthAnchor.constraint(equalTo: imageViewDropDownArrow.heightAnchor, multiplier: 1)
         ])
         return view
     }()
@@ -172,6 +188,18 @@ public class CCWATextFieldViewProperty:UIView {
         label.textColor = UIColor.gray.withAlphaComponent(0.5)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+    
+    lazy var imageViewDropDownArrow:UIImageView = {
+       let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        if #available(iOS 13.0, *) {
+            imageView.image = UIImage(systemName: "chevron.down")
+        } else {
+            // Fallback on earlier versions
+        }
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
     
     //MARK:- CCWATOutlineTextFieldConstraintProperty
@@ -403,11 +431,25 @@ public class CCWATextFieldViewProperty:UIView {
     
     internal var setDropDownSubtitleFontName:String = ""
     
+    internal var setDropDownArrowImage:UIImage? = nil {
+        didSet {
+            if let image = setDropDownArrowImage {
+                imageViewDropDownArrow.image = image
+                imageViewDropDownArrow.tintColor = self.tintColor
+                viewRightSideDropDownArrowImageViewBase.isHidden = false
+            }else {
+                viewRightSideDropDownArrowImageViewBase.isHidden = true
+            }
+        }
+    }
+    
     internal var setFieldType:FieldType = .textField {
         didSet {
             if setFieldType == .textField {
                 buttonFieldActive.isHidden = true
+                viewRightSideDropDownArrowImageViewBase.isHidden = true
             }else {
+                viewRightSideDropDownArrowImageViewBase.isHidden = false
                 buttonFieldActive.isHidden = false
             }
         }

@@ -55,6 +55,8 @@ public class CCWADropDownViewMaster {
     
     public var dropDownSubtitleFontName:String = ""
     
+    public var dropDownArrowImage:UIImage? = nil
+    
     public init() {
         
     }

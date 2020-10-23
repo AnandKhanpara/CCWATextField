@@ -4,13 +4,13 @@ You can improve the design and performance of your app by using CCWATextField. I
 ![CCWATextField](https://user-images.githubusercontent.com/52282676/89509432-ef951500-d7ec-11ea-9fe1-a7ec5a2b21b6.gif)
 
 
-## [Download Example](https://github.com/AnandKhanpara/CCWATextField/files/5427295/CCWATextFieldExample.zip)
+## [Download Example](https://github.com/AnandKhanpara/CCWATextField/files/5427523/CCWATextFieldExample.zip)
 
 
 ### Installation with CocoaPods
 
 ```
-pod 'CCWATextField', '0.0.9'
+pod 'CCWATextField', '1.0.0'
 ```
 
 ## Usage
@@ -18,7 +18,7 @@ pod 'CCWATextField', '0.0.9'
 ### Storyboard
 
 
-![CCWATextField](https://user-images.githubusercontent.com/52282676/89497410-ed758b00-d7d9-11ea-9460-cdf4574aa537.png)
+![CCWATextField](https://user-images.githubusercontent.com/52282676/96961440-4b388a00-1522-11eb-8f72-f58d091259c8.png)
 
 ```swift
 
@@ -65,6 +65,9 @@ class ViewController: UIViewController {
 4. touchUpInsideClear
 
 ```swift 
+
+//Text-Field
+
 ccwaTextField.editingDidBegin { (text) in
      
 }.editingChanged { (text) in
@@ -74,6 +77,13 @@ ccwaTextField.editingDidBegin { (text) in
 }.touchUpInsideClear {
      
 }
+
+//Drop-Down
+
+ccwaTextField.dropDownDidSelectRow = { ccwaTextField, index, value in
+
+}
+
 ```
 
 ### Properties
@@ -146,6 +156,7 @@ ccwaTextField.dropDownTitleColor = .black
 ccwaTextField.dropDownSubtitleColor = .lightGray
 ccwaTextField.dropDownTitleFontName = ""
 ccwaTextField.dropDownSubtitleFontName = ""
+ccwaTextField.dropDownArrowImage = nil
 
 ```
 ##### * You can change the cursor color of CCWATextField and the color of toolbar Done with tintColor.
@@ -232,7 +243,8 @@ class func dropDownMasterValue() -> CCWADropDownViewMaster {
     ccwaDropDownViewMaster.dropDownSubtitleColor = .lightGray
     ccwaDropDownViewMaster.dropDownTitleFontName = ""
     ccwaDropDownViewMaster.dropDownSubtitleFontName = ""
-
+    ccwaDropDownViewMaster.dropDownArrowImage = nil
+    
     return ccwaDropDownViewMaster
 }
 

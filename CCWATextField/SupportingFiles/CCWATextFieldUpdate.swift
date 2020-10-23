@@ -307,6 +307,13 @@ extension CCWATextField: CCWATextFieldDelegate {
             setDropDownSubtitleFontName = dropDownMasterValue.dropDownSubtitleFontName
         }
         
+        if dropDownMaster == false {
+            setDropDownArrowImage = dropDownArrowImage
+        }else {
+            setDropDownArrowImage = dropDownMasterValue.dropDownArrowImage
+        }
+        
+        
         setFieldType = fieldType
         
         ccwaTextField = self
