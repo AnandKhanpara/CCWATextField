@@ -6,6 +6,7 @@ You can improve the design and performance of your app by using CCWATextField. I
 <img src="https://user-images.githubusercontent.com/52282676/96968334-7cb75280-152e-11eb-8d91-c70bb333c712.gif" height="400">
 </h3>
 
+###### Click to Download Example 👇🏻
 ## [Download Example](https://github.com/AnandKhanpara/CCWATextField/files/5427523/CCWATextFieldExample.zip)
 
 
