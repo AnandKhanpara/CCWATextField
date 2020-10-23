@@ -4,7 +4,7 @@ You can improve the design and performance of your app by using CCWATextField. I
 ![CCWATextField](https://user-images.githubusercontent.com/52282676/89509432-ef951500-d7ec-11ea-9fe1-a7ec5a2b21b6.gif)
 
 
-## [Download Example](https://github.com/AnandKhanpara/CCWATextField/files/5267004/CCWATextFieldExample.zip)
+## [Download Example](https://github.com/AnandKhanpara/CCWATextField/files/5427295/CCWATextFieldExample.zip)
 
 
 ### Installation with CocoaPods
@@ -133,19 +133,19 @@ ccwaTextField.doneToolbar = true
              
 //MARK:- CCWADropDown
 
-ccwaTextField.setDropDownBackGroundColor = .white
-ccwaTextField.setDropDownSeperatorLineColor = .lightGray
-ccwaTextField.setDropDownBorderColor = .lightGray
-ccwaTextField.setDropDownBorderWidth = 0.5
-ccwaTextField.setDropDownCornerRadius = 5
-ccwaTextField.setDropDownShadowColor = .darkGray
-ccwaTextField.setDropDownShadowRadius = 4
-ccwaTextField.setDropDownShadowOpacity = 0.5
-ccwaTextField.setDropDownShadowOffset = CGSize(width: 0, height: 2)
-ccwaTextField.setDropDownTitleColor = .black
-ccwaTextField.setDropDownSubtitleColor = .lightGray
-ccwaTextField.setDropDownTitleFontName = ""
-ccwaTextField.setDropDownSubtitleFontName:String = ""
+ccwaTextField.dropDownBackGroundColor = .white
+ccwaTextField.dropDownSeperatorLineColor = .lightGray
+ccwaTextField.dropDownBorderColor = .lightGray
+ccwaTextField.dropDownBorderWidth = 0.5
+ccwaTextField.dropDownCornerRadius = 5
+ccwaTextField.dropDownShadowColor = .darkGray
+ccwaTextField.dropDownShadowRadius = 4
+ccwaTextField.dropDownShadowOpacity = 0.5
+ccwaTextField.dropDownShadowOffset = CGSize(width: 0, height: 2)
+ccwaTextField.dropDownTitleColor = .black
+ccwaTextField.dropDownSubtitleColor = .lightGray
+ccwaTextField.dropDownTitleFontName = ""
+ccwaTextField.dropDownSubtitleFontName = ""
 
 ```
 ##### * You can change the cursor color of CCWATextField and the color of toolbar Done with tintColor.
