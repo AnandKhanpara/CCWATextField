@@ -206,6 +206,10 @@ extension CCWATextFieldViewProperty {
         
         activePlaceholder()
         
+        let topSafeArea = viewController.view.safeAreaInsets.top
+        
+        let bottomSafeArea = viewController.view.safeAreaInsets.bottom
+        
         let view = viewController.view ?? UIView()
         view.endEditing(true)
         let frame = convert(bounds, to: view)
@@ -219,7 +223,7 @@ extension CCWATextFieldViewProperty {
         }()
         
         let ccwaDropDownView:CCWADropDownView = {
-            let view = CCWADropDownView(arrCCWADropDownModel: setArrCCWADropDownModel)
+            let view = CCWADropDownView(frame: .zero, ccwaTextField: ccwaTextField, arrCCWADropDownModel: setArrCCWADropDownModel)
             view.ccwaTextField = ccwaTextField
             view.frame = frame
             view.translatesAutoresizingMaskIntoConstraints = false
@@ -243,9 +247,11 @@ extension CCWATextFieldViewProperty {
         let heightConstraint = ccwaDropDownView.heightAnchor.constraint(equalToConstant: 40)
         heightConstraint.isActive = true
         
-        let bottomSpace = (view.frame.size.height - (frame.size.height + frame.origin.y)) - 40
+        let bottomSpace = (view.frame.size.height - (frame.size.height + frame.origin.y + bottomSafeArea + 20))
         
-        let topSpace = (view.frame.size.height - (bottomSpace + frame.size.height)) - 80
+        let topSpace = frame.origin.y - (topSafeArea + 10)
+        
+        print(bottomSpace, topSpace, frame)
         
         let extraSpace = CGFloat(setArrCCWADropDownModel.filter({ (($0.image != nil) || ($0.imageURL != nil) || (($0.subtitle ?? "").isEmpty == false)) == true }).count * 17)
         
@@ -255,28 +261,38 @@ extension CCWATextFieldViewProperty {
             count = 1
         }
         
-        let heightDropDown :CGFloat = CGFloat(count * 36) + extraSpace
+        var heightDropDown :CGFloat = CGFloat(count * 36) + extraSpace
+        
+        if ccwaTextField?.fieldType == .dropDownSearch {
+            heightDropDown += 40
+        }
 
         func setCCWADropDownViewShadow(height:CGFloat, frame:CGRect) {
             heightConstraint.constant = height
+            ccwaOutlineTFConstraint.dropDownViewHeight = heightConstraint
             ccwaDropDownView.shadow(frame: frame)
         }
 
         if bottomSpace > heightDropDown {
+            print(1)
             ccwaDropDownView.topAnchor.constraint(equalTo: view.topAnchor, constant: (frame.origin.y + frame.size.height + 5)).isActive = true
             heightConstraint.constant = heightDropDown
             ccwaDropDownView.shadow(frame: CGRect(x: 0, y: 0, width: frame.width, height: heightDropDown))
             setCCWADropDownViewShadow(height: heightDropDown, frame: CGRect(x: 0, y: 0, width: frame.width, height: heightDropDown))
-        }else if topSpace > heightDropDown {
+        }else if topSpace > heightDropDown  {
+            print(2)
             ccwaDropDownView.bottomAnchor.constraint(equalTo: view.topAnchor, constant: frame.origin.y + 5).isActive = true
             setCCWADropDownViewShadow(height: heightDropDown, frame: CGRect(x: 0, y: 0, width: frame.width, height: heightDropDown))
         }else if topSpace < bottomSpace {
+            print(3)
             ccwaDropDownView.topAnchor.constraint(equalTo: view.topAnchor, constant: (frame.origin.y + frame.size.height + 5)).isActive = true
             setCCWADropDownViewShadow(height: bottomSpace, frame: CGRect(x: 0, y: 0, width: frame.width, height: bottomSpace))
-        }else if bottomSpace < topSpace {
+        }else if bottomSpace < topSpace  {
+            print(4)
             ccwaDropDownView.bottomAnchor.constraint(equalTo: view.topAnchor, constant: frame.origin.y + 5).isActive = true
             setCCWADropDownViewShadow(height: topSpace, frame: CGRect(x: 0, y: 0, width: frame.width, height: topSpace))
         }else {
+            print(5)
             ccwaDropDownView.topAnchor.constraint(equalTo: view.topAnchor, constant: (frame.origin.y + frame.size.height + 5)).isActive = true
             setCCWADropDownViewShadow(height: bottomSpace, frame: CGRect(x: 0, y: 0, width: frame.width, height: bottomSpace))
         }

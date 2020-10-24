@@ -55,6 +55,10 @@ public class CCWADropDownViewMaster {
     
     public var dropDownSubtitleFontName:String = ""
     
+    public var dropDownSearchPlaceholder:String = ""
+    
+    public var dropDownNoDataMessage:String = ""
+    
     public var dropDownArrowImage:UIImage? = nil
     
     public init() {

@@ -29,11 +29,11 @@ import UIKit
 
 public class CCWADropDownModel {
     
-    var title:String?
-    var subtitle:String?
-    var image:UIImage?
-    var imageURL:String?
-    var value:Any?
+    public var title:String?
+    public var subtitle:String?
+    public var image:UIImage?
+    public var imageURL:String?
+    public var value:Any?
     
     public init(title:String? = nil, subtitle:String? = nil, image:UIImage? = nil, imageURL:String? = nil, value:Any? = nil) {
         self.title = title

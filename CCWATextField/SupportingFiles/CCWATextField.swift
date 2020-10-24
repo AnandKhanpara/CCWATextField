@@ -27,7 +27,7 @@
 
 import UIKit
 
-@IBDesignable
+//@IBDesignable
 public class CCWATextField: CCWATextFieldViewProperty {
     
     @IBInspectable public var master:Bool = false {
@@ -318,6 +318,18 @@ public class CCWATextField: CCWATextFieldViewProperty {
         }
     }
     
+    @IBInspectable public var dropDownSearchPlaceholder:String = "" {
+        didSet {
+            delegate?.update()
+        }
+    }
+    
+    @IBInspectable public var dropDownNoDataMessage:String = "" {
+        didSet {
+            delegate?.update()
+        }
+    }
+    
     @IBInspectable public var dropDownArrowImage:UIImage? = nil {
         didSet {
             delegate?.update()
@@ -351,6 +363,8 @@ public class CCWATextField: CCWATextFieldViewProperty {
     
     public var dropDownDidSelectRow:((_ ccwaTextField:CCWATextField, _ row:Int, _ value:Any?) -> ())?
         
+    public var dropDownSearchEditingChanged:((_ ccwaTextField:CCWATextField, _ arrCCWADropDownModel:[CCWADropDownModel], _ search:String) -> ([CCWADropDownModel]))?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         delegate()

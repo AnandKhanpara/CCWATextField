@@ -40,6 +40,8 @@ class CCWATOutlineTextFieldConstraintProperty: NSObject {
     
     var labelPlaceholderHeightConstraint:NSLayoutConstraint!
     var labelPlaceholderWidthConstraint:NSLayoutConstraint!
+    
+    var dropDownViewHeight:NSLayoutConstraint!
 
     var labelPlaceHolderWidth : CGFloat = 0
     var labelPlaceHolderHeight : CGFloat = 0

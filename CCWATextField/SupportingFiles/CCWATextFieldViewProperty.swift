@@ -195,8 +195,6 @@ public class CCWATextFieldViewProperty:UIView {
         imageView.contentMode = .scaleAspectFit
         if #available(iOS 13.0, *) {
             imageView.image = UIImage(systemName: "chevron.down")
-        } else {
-            // Fallback on earlier versions
         }
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -431,6 +429,10 @@ public class CCWATextFieldViewProperty:UIView {
     
     internal var setDropDownSubtitleFontName:String = ""
     
+    internal var setDropDownSearchPlaceholder:String = ""
+
+    internal var setDropDownNoDataMessage:String = ""
+    
     internal var setDropDownArrowImage:UIImage? = nil {
         didSet {
             if let image = setDropDownArrowImage {
@@ -478,10 +480,8 @@ public class CCWATextFieldViewProperty:UIView {
     public enum FieldType {
         case textField
         case dropDown
+        case dropDownSearch
     }
-    
-    
-    
 }
 
 

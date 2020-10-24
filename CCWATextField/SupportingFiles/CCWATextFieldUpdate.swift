@@ -308,6 +308,18 @@ extension CCWATextField: CCWATextFieldDelegate {
         }
         
         if dropDownMaster == false {
+            setDropDownSearchPlaceholder = dropDownSearchPlaceholder
+        }else {
+            setDropDownSearchPlaceholder = dropDownMasterValue.dropDownSearchPlaceholder
+        }
+        
+        if dropDownMaster == false {
+            setDropDownNoDataMessage = dropDownNoDataMessage
+        }else {
+            setDropDownNoDataMessage = dropDownMasterValue.dropDownNoDataMessage
+        }
+        
+        if dropDownMaster == false {
             setDropDownArrowImage = dropDownArrowImage
         }else {
             setDropDownArrowImage = dropDownMasterValue.dropDownArrowImage

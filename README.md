@@ -13,7 +13,7 @@ You can improve the design and performance of your app by using CCWATextField. I
 ### Installation with CocoaPods
 
 ```
-pod 'CCWATextField', '1.0.0'
+pod 'CCWATextField', '1.0.1'
 ```
 
 ## Usage
@@ -101,7 +101,7 @@ ccwaTextField.dropDownDidSelectRow = { ccwaTextField, index, value in
 
 #### * It is not mandatory to set the value of any properties. You can set the value as per your requirement.
 
-![CCWATextField](https://user-images.githubusercontent.com/52282676/96961440-4b388a00-1522-11eb-8f72-f58d091259c8.png)
+![CCWATextField](https://user-images.githubusercontent.com/52282676/97079520-320f0680-1612-11eb-8bee-764c1a1a3cc7.png)
 
 ``` swift
 
@@ -165,6 +165,8 @@ ccwaTextField.dropDownTitleColor = .black
 ccwaTextField.dropDownSubtitleColor = .lightGray
 ccwaTextField.dropDownTitleFontName = ""
 ccwaTextField.dropDownSubtitleFontName = ""
+ccwaTextField.dropDownSearchPlaceholder = ""
+ccwaTextField.dropDownNoDataMessage = ""
 ccwaTextField.dropDownArrowImage = nil
 
 ```
@@ -252,6 +254,8 @@ class func dropDownMasterValue() -> CCWADropDownViewMaster {
     ccwaDropDownViewMaster.dropDownSubtitleColor = .lightGray
     ccwaDropDownViewMaster.dropDownTitleFontName = ""
     ccwaDropDownViewMaster.dropDownSubtitleFontName = ""
+    ccwaDropDownViewMaster.dropDownSearchPlaceholder = ""
+    ccwaDropDownViewMaster.dropDownNoDataMessage = ""
     ccwaDropDownViewMaster.dropDownArrowImage = nil
     
     return ccwaDropDownViewMaster

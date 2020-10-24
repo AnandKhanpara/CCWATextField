@@ -42,6 +42,22 @@ class CCWADropDownView: UIView {
         return tableView
     }()
     
+    lazy var textFieldSearch:CCWAUITextField = {
+       let textField = CCWAUITextField()
+        textField.delegate = self
+        textField.font = UIFont.systemFont(ofSize: 14)
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.placeholder = "Search ...."
+        textField.clipsToBounds = true
+        textField.layer.cornerRadius = 5
+        textField.leftViewMode = .always
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: 50))
+        textField.rightViewMode = .always
+        textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: 50))
+        textField.addTarget(self, action: #selector(textFieldSearch_editingChanged), for: .editingChanged)
+        return textField
+    }()
+    
     lazy var labelNoDataAvailabel:UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -52,54 +68,81 @@ class CCWADropDownView: UIView {
         return label
     }()
     
+    lazy var viewSearchSeperator:UIView = {
+       let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     var ccwaTextField:CCWATextField?
     
     var arrCCWADropDownModel = [CCWADropDownModel]()
+    
+    var arrAllCCWADropDownModel = [CCWADropDownModel]()
+    
+    var dropDownMaximumHeight:CGFloat = 0
+    
+    var dropDownFrame:CGRect? = nil
     
     let cellIdentifierCCWADropDownCardStyle1TableViewCell = "CCWADropDownCardStyle1TableViewCell"
     let cellIdentifierCCWADropDownCardStyle2TableViewCell = "CCWADropDownCardStyle2TableViewCell"
     let cellIdentifierCCWADropDownCardStyle3TableViewCell = "CCWADropDownCardStyle3TableViewCell"
     let cellIdentifierCCWADropDownCardStyle4TableViewCell = "CCWADropDownCardStyle4TableViewCell"
 
-    init(frame: CGRect = .zero, arrCCWADropDownModel:[CCWADropDownModel] = [CCWADropDownModel]()) {
+    init(frame: CGRect = .zero, ccwaTextField:CCWATextField?, arrCCWADropDownModel:[CCWADropDownModel] = [CCWADropDownModel]()) {
         super.init(frame: frame)
+        
+        self.ccwaTextField = ccwaTextField
         
         if arrCCWADropDownModel.count > 0 {
             self.arrCCWADropDownModel = arrCCWADropDownModel
+            self.arrAllCCWADropDownModel = arrCCWADropDownModel
         }
         
         addSubview(labelNoDataAvailabel)
         addSubview(tableViewDropDown)
         
+        if ccwaTextField?.setFieldType == .dropDownSearch {
+            addSubview(textFieldSearch)
+            addSubview(viewSearchSeperator)
+        }
+        
         NSLayoutConstraint.activate([
-            tableViewDropDown.topAnchor.constraint(equalTo: topAnchor, constant: 0),
             tableViewDropDown.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             tableViewDropDown.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             tableViewDropDown.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
             
-            labelNoDataAvailabel.topAnchor.constraint(equalTo: topAnchor, constant: 0),
-            labelNoDataAvailabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
-            labelNoDataAvailabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            labelNoDataAvailabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
+            labelNoDataAvailabel.topAnchor.constraint(equalTo: tableViewDropDown.topAnchor, constant: 0),
+            labelNoDataAvailabel.leadingAnchor.constraint(equalTo: tableViewDropDown.leadingAnchor, constant: 0),
+            labelNoDataAvailabel.trailingAnchor.constraint(equalTo: tableViewDropDown.trailingAnchor, constant: 0),
+            labelNoDataAvailabel.bottomAnchor.constraint(equalTo: tableViewDropDown.bottomAnchor, constant: 0),
         ])
+        
+        if ccwaTextField?.setFieldType == .dropDownSearch {
+            NSLayoutConstraint.activate([
+                textFieldSearch.topAnchor.constraint(equalTo: topAnchor, constant: 0),
+                textFieldSearch.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+                textFieldSearch.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+                textFieldSearch.bottomAnchor.constraint(equalTo: tableViewDropDown.topAnchor, constant: 0),
+                textFieldSearch.heightAnchor.constraint(equalToConstant: 40),
+                
+                viewSearchSeperator.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+                viewSearchSeperator.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+                viewSearchSeperator.bottomAnchor.constraint(equalTo: textFieldSearch.bottomAnchor, constant: 0),
+                viewSearchSeperator.heightAnchor.constraint(equalToConstant: 0.5),
+            ])
+        }else {
+            tableViewDropDown.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
+        }
         
         tableViewDropDown.register(CCWADropDownCardStyle1TableViewCell.self, forCellReuseIdentifier: cellIdentifierCCWADropDownCardStyle1TableViewCell)
         tableViewDropDown.register(CCWADropDownCardStyle2TableViewCell.self, forCellReuseIdentifier: cellIdentifierCCWADropDownCardStyle2TableViewCell)
         tableViewDropDown.register(CCWADropDownCardStyle3TableViewCell.self, forCellReuseIdentifier: cellIdentifierCCWADropDownCardStyle3TableViewCell)
         tableViewDropDown.register(CCWADropDownCardStyle4TableViewCell.self, forCellReuseIdentifier: cellIdentifierCCWADropDownCardStyle4TableViewCell)
 
-        if self.arrCCWADropDownModel.count > 0 {
-            tableViewDropDown.isHidden = false
-            labelNoDataAvailabel.isHidden = true
-        }else {
-            tableViewDropDown.isHidden = true
-            labelNoDataAvailabel.isHidden = false
-        }
+        noDataMessage()
         
-        OperationQueue.main.addOperation { [weak self] in
-            guard let self = self else { return }
-            self.tableViewDropDown.reloadData()
-        }
+        reloadDropDown()
     }
     
     required init?(coder: NSCoder) {
@@ -108,18 +151,95 @@ class CCWADropDownView: UIView {
     
     func shadow(frame:CGRect = .zero) {
         guard let ccwaTextField = ccwaTextField else { return }
-        tableViewDropDown.layer.cornerRadius = ccwaTextField.setDropDownCornerRadius
-        backgroundColor = ccwaTextField.setDropDownBackGroundColor
         
-        layer.cornerRadius = ccwaTextField.setDropDownCornerRadius
-        layer.borderWidth = ccwaTextField.setDropDownBorderWidth
-        layer.borderColor = ccwaTextField.setDropDownBorderColor.cgColor
+        if dropDownFrame == nil {
+            dropDownFrame = frame
+            dropDownMaximumHeight = frame.size.height
+            setDropDwon()
+        }
         
         layer.shadowPath = UIBezierPath(roundedRect: frame, cornerRadius: ccwaTextField.setDropDownCornerRadius).cgPath
         layer.shadowColor = ccwaTextField.setDropDownShadowColor.cgColor
         layer.shadowOffset = ccwaTextField.setDropDownShadowOffset
         layer.shadowRadius = ccwaTextField.setDropDownShadowRadius
         layer.shadowOpacity = ccwaTextField.setDropDownShadowOpacity
+    }
+    
+    func setDropDwon() {
+        guard let ccwaTextField = ccwaTextField else { return }
+        tableViewDropDown.layer.cornerRadius = ccwaTextField.setDropDownCornerRadius
+        viewSearchSeperator.backgroundColor = ccwaTextField.setDropDownSeperatorLineColor
+        
+        backgroundColor = ccwaTextField.setDropDownBackGroundColor
+        
+        layer.cornerRadius = ccwaTextField.setDropDownCornerRadius
+        layer.borderWidth = ccwaTextField.setDropDownBorderWidth
+        layer.borderColor = ccwaTextField.setDropDownBorderColor.cgColor
+        
+        if ccwaTextField.setDropDownSearchPlaceholder.empty() == false {
+            textFieldSearch.placeholder = ccwaTextField.setDropDownSearchPlaceholder
+        }
+        
+        if ccwaTextField.setDropDownNoDataMessage.empty() == false {
+            labelNoDataAvailabel.text = ccwaTextField.setDropDownNoDataMessage
+        }
+        
+        textFieldSearch.tintColor = ccwaTextField.setDropDownTitleColor.withAlphaComponent(0.5)
+        labelNoDataAvailabel.textColor = ccwaTextField.setDropDownTitleColor.withAlphaComponent(0.5)
+        textFieldSearch.textColor = ccwaTextField.setDropDownTitleColor
+        
+        textFieldSearch.attributedPlaceholder = NSAttributedString(string: textFieldSearch.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor: ccwaTextField.setDropDownTitleColor.withAlphaComponent(0.35)])
+        
+        if ccwaTextField.setDropDownTitleFontName.empty() == false {
+            textFieldSearch.font = UIFont(name: ccwaTextField.setDropDownTitleFontName, size: 14)
+        }
+    }
+    
+    func reloadDropDown() {
+        OperationQueue.main.addOperation { [weak self] in
+            guard let self = self else { return }
+            self.tableViewDropDown.reloadData()
+        }
+    }
+    
+    func noDataMessage() {
+        if self.arrCCWADropDownModel.count > 0 {
+            tableViewDropDown.isHidden = false
+            labelNoDataAvailabel.isHidden = true
+        }else {
+            tableViewDropDown.isHidden = true
+            labelNoDataAvailabel.isHidden = false
+        }
+    }
+    
+    func dropDownUpdateHeight() {
+        let extraSpace = CGFloat(arrCCWADropDownModel.filter({ (($0.image != nil) || ($0.imageURL != nil) || (($0.subtitle ?? "").isEmpty == false)) == true }).count * 17)
+        var count = arrCCWADropDownModel.count
+        if count == 0 {
+            count = 1
+        }
+        var heightDropDown :CGFloat = CGFloat(count * 36) + extraSpace
+        if ccwaTextField?.fieldType == .dropDownSearch {
+            heightDropDown += 40
+        }
+        ccwaTextField?.ccwaOutlineTFConstraint.dropDownViewHeight.constant = (heightDropDown < dropDownMaximumHeight ? heightDropDown : dropDownMaximumHeight)
+        shadow(frame: CGRect(x: dropDownFrame?.origin.x ?? 0, y: dropDownFrame?.origin.y ?? 0, width: dropDownFrame?.size.width ?? 0, height: (heightDropDown < dropDownMaximumHeight ? heightDropDown : dropDownMaximumHeight)))
+        noDataMessage()
+    }
+    
+    @objc func textFieldSearch_editingChanged(_ sender:CCWAUITextField) {
+        let search = sender.text ?? ""
+        if search.empty() == true {
+            arrCCWADropDownModel = arrAllCCWADropDownModel
+            reloadDropDown()
+        }else {
+            if let ccwaTextField = ccwaTextField {
+                let arrCCWADropDownModel = ccwaTextField.dropDownSearchEditingChanged?(ccwaTextField, arrAllCCWADropDownModel, sender.text ?? "")
+                self.arrCCWADropDownModel = arrCCWADropDownModel ?? []
+                reloadDropDown()
+            }
+        }
+        dropDownUpdateHeight()
     }
 }
 
@@ -152,6 +272,7 @@ extension CCWADropDownView: UITableViewDelegate, UITableViewDataSource {
             cell.labelTitle.textColor = ccwaTextField?.setDropDownTitleColor
             cell.labelSubtitle.textColor = ccwaTextField?.setDropDownSubtitleColor
             cell.viewSeperator.backgroundColor = ccwaTextField?.setDropDownSeperatorLineColor
+            cell.viewSeperator.isHidden = (arrCCWADropDownModel.count - 1 == indexPath.row)
             return cell
         }
         
@@ -168,6 +289,7 @@ extension CCWADropDownView: UITableViewDelegate, UITableViewDataSource {
             }
             cell.labelTitle.textColor = ccwaTextField?.setDropDownTitleColor
             cell.viewSeperator.backgroundColor = ccwaTextField?.setDropDownSeperatorLineColor
+            cell.viewSeperator.isHidden = (arrCCWADropDownModel.count - 1 == indexPath.row)
             return cell
         }
         
@@ -183,6 +305,7 @@ extension CCWADropDownView: UITableViewDelegate, UITableViewDataSource {
             cell.labelTitle.textColor = ccwaTextField?.setDropDownTitleColor
             cell.labelSubtitle.textColor = ccwaTextField?.setDropDownSubtitleColor
             cell.viewSeperator.backgroundColor = ccwaTextField?.setDropDownSeperatorLineColor
+            cell.viewSeperator.isHidden = (arrCCWADropDownModel.count - 1 == indexPath.row)
             return cell
         }
         
@@ -193,6 +316,7 @@ extension CCWADropDownView: UITableViewDelegate, UITableViewDataSource {
             }
             cell.labelTitle.textColor = ccwaTextField?.setDropDownTitleColor
             cell.viewSeperator.backgroundColor = ccwaTextField?.setDropDownSeperatorLineColor
+            cell.viewSeperator.isHidden = (arrCCWADropDownModel.count - 1 == indexPath.row)
             return cell
         }
         
@@ -206,6 +330,16 @@ extension CCWADropDownView: UITableViewDelegate, UITableViewDataSource {
         if let ccwaTextField = ccwaTextField {
             ccwaTextField.dropDownDidSelectRow?(ccwaTextField, indexPath.row, data.value)
         }
+    }
+    
+}
+
+
+extension CCWADropDownView: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        endEditing(true)
+        return false
     }
     
 }
