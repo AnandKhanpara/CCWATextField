@@ -33,7 +33,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        ccwaTextField.fieldType = .dropDown // .textField (Default)
+        
+        ccwaTextField.fieldType = .textField //(Default)
+        //ccwaTextField.fieldType = .dropDown
+        //ccwaTextField.fieldType = .dropDownSearch
+        
     }
 }
 
@@ -50,7 +54,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let ccwaTextField = CCWATextField()
-        ccwaTextField.fieldType = .dropDown // .textField (Default)
+        
+        ccwaTextField.fieldType = .textField //(Default)
+        //ccwaTextField.fieldType = .dropDown
+        //ccwaTextField.fieldType = .dropDownSearch
+        
         view.addSubview(ccwaTextField)
         
     }
@@ -73,6 +81,11 @@ class ViewController: UIViewController {
 
 1. dropDownDidSelectRow
 
+###### Drop-Down-Search
+
+1. dropDownDidSelectRow
+2. dropDownSearchEditingChanged
+
 ```swift 
 
 //Text-Field
@@ -91,6 +104,17 @@ ccwaTextField.editingDidBegin { (text) in
 
 ccwaTextField.dropDownDidSelectRow = { ccwaTextField, index, value in
 
+}
+
+//Drop-Down
+
+ccwaTextField.dropDownDidSelectRow = { ccwaTextField, index, value in
+
+}
+
+ccwaTextField.dropDownSearchEditingChanged = { ccwaTextField, arrCCWADropDownModel, search in
+    let arrCCWADropDownModel = arrCCWADropDownModel.filter({ $0.title?.localizedCaseInsensitiveContains(search) == true })
+    return arrCCWADropDownModel
 }
 
 ```
