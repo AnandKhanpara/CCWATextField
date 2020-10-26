@@ -2,8 +2,9 @@
 You can improve the design and performance of your app by using CCWATextField. In the iOS app, you can see how many CCWATextField properties you can customize in your own way. 
 
 <h3 align="center">                 
-<img src="https://user-images.githubusercontent.com/52282676/96968419-96589a00-152e-11eb-9f7c-e866f1b847d8.gif" height="400">         
-<img src="https://user-images.githubusercontent.com/52282676/96968334-7cb75280-152e-11eb-8d91-c70bb333c712.gif" height="400">
+<img src="https://user-images.githubusercontent.com/52282676/97165408-a62fe280-17a9-11eb-9e4a-1debdc21be68.gif" height="400">         
+<img src="https://user-images.githubusercontent.com/52282676/97165412-a7f9a600-17a9-11eb-8d2f-1296c3080d51.gif" height="400">
+<img src="https://user-images.githubusercontent.com/52282676/97165420-a9c36980-17a9-11eb-85e7-bfca479181e1.gif" height="400">
 </h3>
 
 ###### Click to Download Example 👇🏻
